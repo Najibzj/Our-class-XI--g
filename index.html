@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#202a44"><title>Our Class XI-G</title><link rel="stylesheet" href="css/style.css">
+</head><body>
+<div id="loginScreen" class="login-wrap">
+  <section class="login-card">
+    <div class="logo">XI-G</div><p class="eyebrow">MAN 4 BANJAR</p><h1>Our Class</h1><p class="muted">Satu kelas, banyak cerita.</p>
+    <div class="role-picks"><button class="role-btn active" data-kind="Murid">Murid</button><button class="role-btn" data-kind="Guru">Guru</button></div>
+    <label>Jabatan / akses<select id="loginRole"><option value="anggota">Anggota</option><option value="sekretaris">Sekretaris</option><option value="bendahara">Bendahara</option><option value="ketua">Ketua</option></select></label>
+    <label>Nama pengguna<input id="username" placeholder="Contoh: riski" autocomplete="username"></label>
+    <label>Kata sandi<input id="password" type="password" placeholder="Masukkan kata sandi" autocomplete="current-password"></label>
+    <button id="loginBtn" class="primary full">Masuk</button><p id="loginMsg" class="small muted">Mode demo: riski / 12345</p>
+  </section>
+</div>
+<div id="app" class="app hidden">
+<aside class="sidebar">
+ <div class="brand"><div class="logo small-logo">XI-G</div><div><b>Our Class</b><small>MAN 4 Banjar</small></div></div>
+ <div class="side-user"><div class="avatar">N</div><div><b id="userLabel">Najib</b><small id="roleLabel">Anggota</small></div></div>
+ <nav id="nav">
+ <button data-page="dashboard" class="nav-item active">⌂ <span>Dashboard</span></button>
+ <button data-page="denah" class="nav-item">▦ <span>Denah Kelas</span></button>
+ <button data-page="pengumuman" class="nav-item">◉ <span>Pengumuman</span></button>
+ <button data-page="absensi" class="nav-item">✓ <span>Absensi</span></button>
+ <button data-page="tugas" class="nav-item">▤ <span>Tugas</span></button>
+ <button data-page="tagihan" class="nav-item">Rp <span>Tagihan</span></button>
+ <button data-page="anggota" class="nav-item">♙ <span>Profil Anggota</span></button>
+ <button data-page="playlist" class="nav-item">♫ <span>Playlist Kelas</span></button>
+ <button data-page="saluran" class="nav-item">◎ <span>Sosmed & Saluran</span></button>
+ <button data-page="jadwal" class="nav-item">▣ <span>Jadwal Pelajaran</span></button>
+ <button data-page="pakaian" class="nav-item">♧ <span>Jadwal Pakaian</span></button>
+ </nav><button id="logoutBtn" class="logout">↪ Keluar</button>
+</aside>
+<main class="main">
+<header class="topbar"><button id="menuBtn" class="icon-btn">☰</button><div class="search">⌕ <input id="searchInput" placeholder="Cari di kelas..."></div><div class="top-avatar">N</div></header>
+<div id="pageContent" class="content"></div><footer>Our Class XI-G · MAN 4 Banjar</footer>
+</main></div><script src="js/app.js"></script></body></html>
