@@ -29,8 +29,39 @@ function addTask(){data.tasks.push({title:$("#tTitle").value,desc:"Tugas kelas",
 function bills(){return `${canEdit("tagihan")?addForm("Tambah tagihan",'<label>Nama tagihan<input id="bName" required placeholder="Kas / buku / acara"></label><label>Nominal (Rp)<input id="bAmount" type="number" min="0" required></label>',"addBill()"):""}<div class="panel"><h2>Daftar tagihan</h2><div class="table-wrap"><table><thead><tr><th>Tagihan</th><th>Nominal</th><th>Status</th><th>Aksi</th></tr></thead><tbody>${data.bills.map((x,i)=>`<tr><td>${x.name}</td><td>Rp ${Number(x.amount).toLocaleString("id-ID")}</td><td><span class="tag">${x.paid?"Lunas":"Belum lunas"}</span></td><td>${canEdit("tagihan")?btn(x.paid?"Batalkan":"Lunasi",`data.bills[${i}].paid=!data.bills[${i}].paid;render()`,"action")+" "+btn("Hapus",`data.bills.splice(${i},1);render()`,"action danger"):"—"}</td></tr>`).join("")}</tbody></table></div></div>`}
 function addBill(){data.bills.push({name:$("#bName").value,amount:Number($("#bAmount").value),person:"Anggota",paid:false});render()}
 function members(){return `<div class="profile-grid">${data.profiles.map(x=>`<article class="profile"><div class="avatar">${x.name[0].toUpperCase()}</div><h3>${x.name}</h3><p>${x.role}</p><p style="margin-top:10px">${x.quote}</p></article>`).join("")}</div><div class="panel" style="margin-top:15px"><h2>Info profil</h2><p class="muted">Profil dapat dikembangkan dengan foto, tanggal lahir, hobi, prestasi, akun sosial, kutipan, dan tautan lagu Spotify.</p></div>`}
-function playlist(){return `<div class="panel"><h2>Playlist XI-G</h2><p class="muted">Tambahkan lagu favorit kelas dan buka tautan playlist Spotify.</p><div class="list-row"><b>Playlist Kelas XI-G</b><small>Spotify · tautan dapat diatur nanti</small></div>${data.songs.map((s,i)=>`<div class="list-row"><b>${i+1}. ${s}</b><small>♫ Lagu kelas</small></div>`).join("")}<label>Tautan Spotify<input id="spotifyUrl" placeholder="https://open.spotify.com/playlist/..."></label><button class="primary" onclick="openSpotify()">Buka Spotify</button></div>`}
-function openSpotify(){let u=$("#spotifyUrl").value;if(u.startsWith("https://open.spotify.com/"))window.open(u,"_blank");else alert("Masukkan tautan Spotify yang valid.")}
+
+function playlist() {
+  return `
+    <div class="panel playlist-card">
+      <h2>🎵 Playlist Kelas XI-G</h2>
+
+      <div class="playlist-content">
+        <img
+          src="aset/Screenshot_20261010-155852.jpg"
+          alt="Logo Playlist XI-G"
+          class="playlist-logo"
+        >
+
+        <h3>Playlist XI-G</h3>
+        <p>
+          Kumpulan lagu pilihan untuk menemani
+          hari-hari kelas XI-G.
+        </p>
+
+        <a
+          class="primary playlist-link"
+          href="https://open.spotify.com/playlist/7Ls5JdpWqrFIE02Gn75lfy?si=A8Kub2a-R4qf9mCMBOaZ1A&utm_source=copy-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🎧 Buka Playlist di Spotify
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+function openSpotify(){let u=$("https://open.spotify.com/playlist/7Ls5JdpWqrFIE02Gn75lfy?si=A8Kub2a-R4qf9mCMBOaZ1A&utm_source=copy-link").value;if(u.startsWith("https://open.spotify.com/"))window.open(u,"_blank");else alert("Masukkan tautan Spotify yang valid.")}
 function channels(){return `<div class="cards">${[["Instagram","https://instagram.com/"],["TikTok","https://tiktok.com/"],["YouTube","https://youtube.com/"],["WhatsApp Channel","https://whatsapp.com/"],["Telegram","https://telegram.org/"],["Discord","https://discord.com/"]].map(x=>`<article class="item-card"><h3>${x[0]}</h3><p>Saluran komunikasi kelas XI-G.</p><a href="${x[1]}" target="_blank" rel="noopener">Buka ${x[0]} ↗</a></article>`).join("")}</div>`}
 function schedule(){return `<div class="panel"><h2>Jadwal pelajaran</h2><div class="table-wrap"><table><thead><tr><th>Waktu</th><th>Mata pelajaran</th></tr></thead><tbody>${data.schedule.map(x=>`<tr><td>${x[0]}</td><td>${x[1]}</td></tr>`).join("")}</tbody></table></div><p class="muted small">Jadwal ini contoh awal; sesuaikan dengan jadwal resmi kelas.</p></div>`}
 function clothes(){return `<div class="panel"><h2>Jadwal pakaian</h2>${[["Senin","Putih abu-abu"],["Selasa","Pramuka"],["Rabu","Seragam madrasah"],["Kamis","Batik"],["Jumat","Muslim / Muslimah"]].map(x=>`<div class="list-row"><b>${x[0]}</b><small>${x[1]}</small></div>`).join("")}<p class="muted small">Silakan sesuaikan dengan ketentuan sekolah.</p></div>`}
