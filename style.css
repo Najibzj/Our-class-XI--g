@@ -1805,3 +1805,63 @@
     grid-column: 2;
   }
 }
+/* PERBAIKAN SCROLL HALAMAN SALURAN */
+html,
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  height: auto;
+  overflow: visible;
+}
+
+.main {
+  min-width: 0;
+  min-height: 100vh;
+  height: auto;
+  overflow: visible;
+}
+
+.content {
+  min-height: calc(100vh - 110px);
+  height: auto;
+  overflow: visible;
+}
+
+/* Pastikan konten saluran tidak membatasi tinggi halaman */
+.ig-profile {
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  margin-bottom: 30px;
+}
+
+/* Perbaikan khusus HP */
+@media (max-width: 850px) {
+  html,
+  body {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .app,
+  .main,
+  .content {
+    height: auto !important;
+    min-height: 100vh;
+    overflow: visible !important;
+  }
+
+  .sidebar {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .ig-profile {
+    max-height: none;
+    overflow: visible;
+  }
+}
