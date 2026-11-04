@@ -1,1807 +1,1098 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
-:root{--navy:#202a44;--slate:#708090;--tan:#d2b48c;--coffee:#6f4e37;--caput:#592720;--paper:#f6f3ee;--white:#fff;--line:#e8e0d5;--green:#557b60;--red:#a24b42}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--navy);font-family:Nunito,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}.hidden{display:none!important}.muted{color:#7b8190}.small{font-size:12px}.eyebrow{letter-spacing:2px;font-size:11px;font-weight:800;color:var(--coffee)}h1,h2,h3,p{margin-top:0}.login-wrap{min-height:100vh;display:grid;place-items:center;padding:20px;background:linear-gradient(145deg,var(--navy),var(--caput))}.login-card{width:min(100%,390px);background:white;border-radius:24px;padding:28px;box-shadow:0 22px 60px #0003}.login-card h1{font-size:32px;margin-bottom:3px}.logo{height:62px;width:62px;display:grid;place-items:center;border-radius:19px;background:var(--tan);color:var(--navy);font-weight:900;font-size:20px;margin-bottom:16px}.role-picks{display:flex;gap:8px;margin:18px 0}.role-btn{flex:1;padding:11px;border-radius:11px;background:#f2eee8;color:var(--coffee);font-weight:800}.role-btn.active{background:var(--navy);color:white}label{display:block;font-size:12px;font-weight:800;margin:12px 0;color:var(--navy)}input,select,textarea{display:block;width:100%;border:1px solid var(--line);border-radius:10px;padding:11px;margin-top:6px;background:white;color:var(--navy);outline-color:var(--tan)}.primary{background:var(--coffee);color:white;padding:11px 16px;border-radius:11px;font-weight:800}.full{width:100%;margin-top:10px}.app{min-height:100vh;display:grid;grid-template-columns:235px 1fr}.sidebar{background:var(--navy);color:#fff;padding:20px 13px;display:flex;flex-direction:column;min-height:100vh}.brand,.side-user{display:flex;align-items:center;gap:10px;padding:4px 8px 20px}.brand b,.brand small,.side-user b,.side-user small{display:block}.brand small,.side-user small{color:#c0c5cf;font-size:11px}.small-logo{width:42px;height:42px;border-radius:13px;margin:0;font-size:14px}.side-user{border-top:1px solid #ffffff22;border-bottom:1px solid #ffffff22;padding:15px 8px;margin-bottom:12px}.avatar,.top-avatar{height:36px;width:36px;border-radius:50%;display:grid;place-items:center;background:var(--tan);color:var(--navy);font-weight:900}.nav-item{width:100%;display:flex;gap:13px;align-items:center;text-align:left;background:transparent;color:#dce0e7;padding:12px;border-radius:10px;margin:2px 0}.nav-item.active,.nav-item:hover{background:var(--tan);color:var(--navy);font-weight:900}.logout{margin-top:auto;padding:12px;text-align:left;color:#fff;background:#ffffff14;border-radius:10px}.main{min-width:0}.topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:0 25px;position:sticky;top:0;z-index:5}.icon-btn{background:transparent;color:var(--navy);font-size:22px}.search{display:flex;align-items:center;gap:8px;background:var(--paper);padding:0 12px;border-radius:12px;flex:1;max-width:440px}.search input{border:0;background:transparent;margin:0}.top-avatar{margin-left:auto}.content{padding:26px;max-width:1200px;margin:auto;min-height:calc(100vh - 110px)}footer{text-align:center;color:#999;font-size:11px;padding:15px}.welcome{background:linear-gradient(115deg,var(--coffee),#9a6b4c);color:#fff;border-radius:19px;padding:25px;display:flex;align-items:center;justify-content:space-between;gap:15px;overflow:hidden}.welcome h1{font-size:26px;margin:6px 0}.welcome p{margin:0;color:#f4e8dc}.pill{display:inline-block;background:#ffffff22;border-radius:20px;padding:6px 10px;font-size:11px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:18px 0}.stat,.panel,.item-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px}.stat small{color:#777}.stat strong{display:block;font-size:25px;margin-top:7px}.two-col{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}.panel h2{font-size:17px;margin-bottom:14px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}.section-head h1{font-size:24px;margin:0}.muted-btn{background:#f0e9df;color:var(--coffee);border-radius:9px;padding:9px 12px;font-weight:800}.list-row{padding:12px 0;border-bottom:1px solid var(--line)}.list-row:last-child{border:0}.list-row b{display:block}.list-row small{color:#7c8290}.tag{font-size:11px;border-radius:7px;background:#f2e7d7;color:var(--coffee);padding:4px 7px;display:inline-block}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.desk-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}.desk{border:1px dashed #cbbba7;background:#fbf8f4;border-radius:11px;padding:10px;text-align:center}.desk small{display:block;color:#8b8176;font-size:10px;margin-bottom:5px}.desk input{text-align:center;padding:8px;font-size:12px}.teacher-seat{margin:12px auto 20px;width:160px;text-align:center;padding:12px;background:var(--navy);color:#fff;border-radius:10px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line)}th{color:#7b8190;font-size:11px}.action{background:#eee5d8;color:var(--coffee);padding:6px 9px;border-radius:7px;font-size:12px;font-weight:800}.danger{color:var(--red)}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.item-card h3{font-size:15px;margin-bottom:8px}.item-card p{font-size:13px;color:#7b8190}.empty{padding:25px;text-align:center;color:#8a8d94}.profile-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.profile{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;text-align:center}.profile .avatar{margin:0 auto 10px}.profile h3{margin-bottom:3px}.profile p{font-size:12px;color:#7b8190;margin:0}.toast{position:fixed;bottom:20px;right:20px;background:var(--navy);color:#fff;padding:12px 16px;border-radius:10px;z-index:20}
-@media(max-width:850px){.app{grid-template-columns:1fr}.sidebar{position:fixed;z-index:10;left:-260px;top:0;width:245px;transition:left .2s}.sidebar.open{left:0;box-shadow:0 0 0 100vmax #0006}.content{padding:17px}.topbar{padding:0 15px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.profile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.welcome h1{font-size:22px}}
-@media(max-width:430px){.cards{grid-template-columns:1fr}.desk-grid{gap:6px}.desk{padding:6px 3px}.desk input{padding:7px 2px}.form-row{grid-template-columns:1fr}.welcome{padding:19px}.welcome h1{font-size:20px}.stat strong{font-size:22px}}
+const $=s=>document.querySelector(s),
+$$=s=>[...document.querySelectorAll(s)];
 
-/* Playlist Kelas XI-G */
-.playlist-card {
-  text-align: center;
-}
+let kind="Murid", role="anggota", username="Anggota", page="dashboard";
 
-.playlist-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 8px;
-}
+const perms={
+  sekretaris:["pengumuman","tugas","denah","absensi","jadwal","pakaian"],
+  bendahara:["tagihan"],
+  ketua:["*"],
+  anggota:[],
+  guru:["*"]
+};
 
-.playlist-logo {
-  width: 180px;
-  height: 180px;
-  max-width: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.15);
-}
+const data={
+  announcements:[
+    {title:"Persiapan kelas",desc:"Jaga kebersihan dan kerapian kelas.",date:"Hari ini"}
+  ],
+  tasks:[
+    {title:"Matematika — Inversi Fungsi",desc:"Pelajari materi dan selesaikan latihan.",due:"Besok"},
+    {title:"Kimia — Laporan Praktikum",desc:"Kumpulkan laporan praktikum.",due:"2 hari"}
+  ],
+  bills:[
+    {name:"Kas kelas",amount:10000,person:"Semua anggota",paid:false}
+  ],
+  attendance:[],
+  seats:Array(15).fill(""),
+  songs:["Lagu Kenangan Kelas","Semangat Pagi","Lagu Favorit XI-G"],
+  profiles:[
+    {name:"Najib",role:"Anggota",quote:"Satu kelas, banyak cerita."}
+  ],
+  gallery:[],
+  schedule:[
+    ["07.30–08.00","Matematika"],
+    ["08.00–10.00","Bahasa Indonesia"],
+    ["10.45–12.15","Kimia"],
+    ["13.00–14.30","Sejarah"]
+  ]
+};
 
-.playlist-content h3 {
-  margin: 4px 0 0;
-}
+const labels={
+  dashboard:"Dashboard",
+  denah:"Denah Kelas",
+  pengumuman:"Pengumuman",
+  absensi:"Absensi",
+  tugas:"Tugas",
+  tagihan:"Tagihan",
+  anggota:"Profil Anggota",
+  gallery:"Gallery XI-G",
+  playlist:"Playlist Kelas",
+  saluran:"Sosmed & Saluran",
+  jadwal:"Jadwal Pelajaran",
+  pakaian:"Jadwal Pakaian"
+};
 
-.playlist-content p {
-  margin: 0 0 10px;
-  line-height: 1.6;
-}
+const passwords={
+  sekretaris:"PWSS",
+  bendahara:"KASX",
+  ketua:"KETUAX",
+  guru:"SSSG"
+};
 
-.playlist-link {
-  display: inline-block;
-  text-decoration: none;
-  padding: 12px 18px;
-  border-radius: 10px;
-  text-align: center;
-}
+// Mengatur pilihan Murid dan Guru
+$$(".role-btn").forEach(b=>{
+  b.onclick=()=>{
+    kind=b.dataset.kind;
 
+    $$(".role-btn").forEach(x=>
+      x.classList.toggle("active",x===b)
+    );
 
-/* Gallery XI-G */
-.gallery-upload {
-  margin-bottom: 18px;
-}
+    $("#loginRole").innerHTML=kind==="Guru"
+      ? '<option value="guru">Guru</option>'
+      : '<option value="anggota">Anggota</option>'+
+        '<option value="sekretaris">Sekretaris</option>'+
+        '<option value="bendahara">Bendahara</option>'+
+        '<option value="ketua">Ketua</option>';
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
+    const nameField=$("#username");
+    if(nameField){
+      nameField.value="";
+      const nameLabel=nameField.closest("label");
+      if(nameLabel) nameLabel.style.display="none";
+    }
 
-.gallery-card {
-  min-width: 0;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  overflow: hidden;
-}
+    $("#password").value="";
+    $("#password").required=
+      kind==="Guru" || $("#loginRole").value!=="anggota";
 
-.gallery-photo {
-  margin: 10px;
-  padding: 6px;
-  background: #fff;
-  border: 3px solid #ded6ca;
-  border-radius: 5px;
-  overflow: hidden;
-}
+    $("#loginRole").onchange=()=>{
+      $("#password").required=
+        kind==="Guru" || $("#loginRole").value!=="anggota";
+      $("#password").value="";
+      msg("");
+    };
 
-.gallery-photo img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  cursor: zoom-in;
-}
+    msg("");
+  };
+});
 
-.gallery-photo.polaroid {
-  padding: 7px 7px 24px;
-  border: 1px solid #ddd;
-  box-shadow: 0 3px 9px #0001;
-}
+// Proses login
+$("#loginBtn").onclick=()=>{
+  role=$("#loginRole").value;
+  const pw=$("#password").value;
 
-.gallery-photo.coffee {
-  border: 6px double var(--coffee);
-  background: var(--tan);
-}
+  // Anggota tidak memerlukan nama atau password
+  if(kind==="Murid" && role==="anggota"){
+    username="Anggota";
+  }else{
+    if(!pw){
+      return msg("Masukkan kata sandi terlebih dahulu.");
+    }
 
-.gallery-photo.film {
-  border: 5px dashed var(--navy);
-  background: #e9e2d8;
-}
+    if(pw!==passwords[role]){
+      return msg("Kata sandi tidak sesuai.");
+    }
 
-.gallery-photo.soft {
-  border: 3px solid #d6b7a7;
-  border-radius: 20px;
-  background: #f8eee9;
-}
-
-.gallery-caption {
-  padding: 0 10px 12px;
-}
-
-.gallery-caption p {
-  font-size: 12px;
-  font-weight: 800;
-  overflow-wrap: anywhere;
-  margin-bottom: 8px;
-}
-
-.gallery-caption button {
-  margin: 2px 2px 2px 0;
-}
-
-.gallery-viewer {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background: #151515ed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.gallery-viewer.hidden {
-  display: none !important;
-}
-
-.gallery-viewer img {
-  max-width: 100%;
-  max-height: 85vh;
-  object-fit: contain;
-}
-
-.gallery-close {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  background: white;
-  color: var(--navy);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-}
-
-@media (max-width: 850px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-}
-
-@media (max-width: 360px) {
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* Instagram Profile - Our Class XI-G */
-.ig-profile {
-  max-width: 650px;
-  margin: 12px auto;
-  overflow: hidden;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  box-shadow: 0 10px 30px #202a4412;
-}
-
-.ig-cover {
-  min-height: 145px;
-  padding: 28px 20px 42px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  background:
-    radial-gradient(circle at 15% 20%, #d2b48c55, transparent 35%),
-    radial-gradient(circle at 85% 80%, #70809066, transparent 35%),
-    linear-gradient(135deg, #202a44, #6f4e37 65%, #592720);
-  position: relative;
-}
-
-.ig-cover::before,
-.ig-cover::after {
-  content: "✦";
-  position: absolute;
-  color: #d2b48c;
-  font-size: 27px;
-  opacity: .8;
-}
-
-.ig-cover::before {
-  top: 18px;
-  left: 24px;
-}
-
-.ig-cover::after {
-  right: 24px;
-  bottom: 18px;
-}
-
-.ig-cover-label {
-  font-size: 20px;
-  font-weight: 900;
-  letter-spacing: 3px;
-}
-
-.ig-cover-year {
-  margin-top: 8px;
-  font-size: 10px;
-  letter-spacing: 2px;
-  opacity: .85;
-}
-
-.ig-profile-main {
-  padding: 0 22px 22px;
-}
-
-.ig-profile-top {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-top: -30px;
-  position: relative;
-}
-
-.ig-avatar {
-  width: 100px;
-  height: 100px;
-  flex-shrink: 0;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 5px solid var(--white);
-  background: var(--tan);
-  box-shadow: 0 4px 12px #00000018;
-}
-
-.ig-profile-info {
-  flex: 1;
-  min-width: 0;
-  padding-top: 28px;
-}
-
-.ig-profile-info h2 {
-  margin: 0;
-  color: var(--navy);
-  font-size: 21px;
-  overflow-wrap: anywhere;
-}
-
-.ig-display-name {
-  margin: 4px 0 12px;
-  color: var(--slate);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.ig-stats {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.ig-stats div {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.ig-stats strong {
-  color: var(--coffee);
-  font-size: 14px;
-}
-
-.ig-stats span {
-  color: var(--slate);
-  font-size: 10px;
-}
-
-.ig-bio {
-  margin-top: 22px;
-  padding: 17px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-}
-
-.ig-bio p {
-  margin: 8px 0;
-  color: var(--navy);
-  font-size: 13px;
-  line-height: 1.6;
-  overflow-wrap: anywhere;
-}
-
-.ig-bio .ig-bio-title {
-  margin-top: 0;
-  color: var(--coffee);
-  font-size: 14px;
-  font-weight: 900;
-}
-
-.ig-bio .ig-bio-tag {
-  margin-bottom: 0;
-  color: var(--slate);
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.ig-follow-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  width: 100%;
-  box-sizing: border-box;
-  margin-top: 17px;
-  padding: 13px 16px;
-  border-radius: 12px;
-  color: #fff;
-  background: linear-gradient(110deg, var(--navy), var(--coffee));
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 800;
-  transition: transform .2s, opacity .2s;
-}
-
-.ig-follow-btn:hover {
-  opacity: .9;
-  transform: translateY(-2px);
-}
-
-.ig-follow-btn > span:first-child {
-  font-size: 21px;
-}
-
-.ig-arrow {
-  margin-left: auto;
-  font-size: 18px;
-}
-
-.ig-bottom-note {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-  color: var(--tan);
-}
-
-.ig-bottom-note p {
-  margin: 0;
-  color: var(--slate);
-  font-size: 11px;
-  font-style: italic;
-  text-align: center;
-}
-
-@media (max-width: 420px) {
-  .ig-profile-main {
-    padding-right: 15px;
-    padding-left: 15px;
+    username=kind==="Guru"
+      ? "Guru"
+      : role.charAt(0).toUpperCase()+role.slice(1);
   }
 
-  .ig-profile-top {
-    gap: 12px;
+  $("#loginScreen").classList.add("hidden");
+  $("#app").classList.remove("hidden");
+  $("#userLabel").textContent=username;
+  $("#roleLabel").textContent=
+    kind==="Guru"
+      ? "Guru"
+      : role.charAt(0).toUpperCase()+role.slice(1);
+
+  render();
+};
+
+function msg(t){
+  $("#loginMsg").textContent=t;
+}
+
+$("#logoutBtn").onclick=()=>{
+  $("#app").classList.add("hidden");
+  $("#loginScreen").classList.remove("hidden");
+  $("#password").value="";
+};
+
+$("#menuBtn").onclick=()=>{
+  $(".sidebar").classList.toggle("open");
+};
+
+$("#nav").onclick=e=>{
+  const b=e.target.closest("[data-page]");
+  if(!b)return;
+
+  page=b.dataset.page;
+  $$(".nav-item").forEach(n=>
+    n.classList.toggle("active",n===b)
+  );
+
+  $(".sidebar").classList.remove("open");
+  render();
+};
+
+function canEdit(p){
+  const a=perms[role]||[];
+  return a.includes("*")||a.includes(p);
+}
+
+function btn(t,fn,cls="muted-btn"){
+  return `<button class="${cls}" onclick="${fn}">${t}</button>`;
+}
+
+function addForm(title,fields,fn){
+  return `<div class="panel"><h2>${title}</h2>
+    <form onsubmit="${fn};return false">
+      <div class="form-row">${fields}</div>
+      <button class="primary" style="margin-top:12px">Tambah</button>
+    </form>
+  </div>`;
+}
+
+// Menampilkan halaman
+function render(){
+  const c=$("#pageContent");
+
+  c.innerHTML=
+    `<div class="section-head">
+      <h1>${labels[page]}</h1>
+      <span class="tag">${kind==="Guru"?"Akses Guru":role}</span>
+    </div>`+
+    ({
+      dashboard:dashboard,
+      denah:denah,
+      pengumuman:announcements,
+      absensi:attendance,
+      tugas:tasks,
+      tagihan:bills,
+      anggota:members,
+      playlist:playlist,
+      gallery:gallery,
+      saluran:channels,
+      jadwal:schedule,
+      pakaian:clothes
+    }[page]||dashboard)();
+
+  c.querySelectorAll("form").forEach(f=>
+    f.addEventListener("submit",e=>e.preventDefault())
+  );
+}
+
+function dashboard(){
+  const safe = value => String(value ?? "").replace(
+    /[&<>"']/g,
+    ch => ({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#39;"
+    }[ch])
+  );
+
+  const money = value =>
+    "Rp " + Number(value || 0).toLocaleString("id-ID");
+
+  const pendingBills = data.bills.filter(x => !x.paid);
+  const unpaidTotal = pendingBills.reduce(
+    (sum, bill) => sum + Number(bill.amount || 0), 0
+  );
+
+  const recentTasks = data.tasks.slice(0, 3);
+  const recentAnnouncements = data.announcements.slice(0, 3);
+
+  const attendanceToday = data.attendance.filter(x =>
+    x.date === new Date().toLocaleDateString("id-ID")
+  );
+
+  const presentToday = attendanceToday.filter(
+    x => x.status === "Hadir"
+  ).length;
+
+  const quickLinks = [
+    {icon:"📢",title:"Pengumuman",desc:"Informasi kelas",page:"pengumuman"},
+    {icon:"📚",title:"Daftar Tugas",desc:"Tugas dan tenggat",page:"tugas"},
+    {icon:"✓",title:"Absensi",desc:"Catatan kehadiran",page:"absensi"},
+    {icon:"💰",title:"Tagihan",desc:"Status pembayaran",page:"tagihan"},
+    {icon:"📅",title:"Jadwal",desc:"Pelajaran kelas",page:"jadwal"},
+    {icon:"📸",title:"Gallery",desc:"Foto kenangan",page:"gallery"},
+    {icon:"🎵",title:"Playlist",desc:"Musik kelas",page:"playlist"},
+    {icon:"♙",title:"Anggota",desc:"Profil teman",page:"anggota"}
+  ];
+
+  return `
+    <section class="dash-hero">
+      <div class="dash-hero-overlay"></div>
+
+      <div class="dash-hero-content">
+        <span class="dash-eyebrow">
+          ✦ MAN 4 BANJAR · TAHUN AJARAN 2026/2027
+        </span>
+
+        <h1>Our Class XI-G</h1>
+
+        <p>
+          Halo, ${safe(username)}! 👋<br>
+          Satu kelas, banyak cerita. Mari buat hari ini bermakna.
+        </p>
+
+        <button class="dash-hero-button"
+          onclick="openDashboardPage('gallery')">
+          📸 Jelajahi Kenangan
+        </button>
+      </div>
+
+      <div class="dash-hero-decoration">XI-G</div>
+    </section>
+
+    <section class="dash-section">
+      <div class="dash-section-heading">
+        <div>
+          <p class="dash-section-kicker">CLASS OVERVIEW</p>
+          <h2>Ringkasan Kelas</h2>
+        </div>
+        <span class="dash-heading-mark">✦</span>
+      </div>
+
+      <div class="dash-stats">
+        <article class="dash-stat-card">
+          <div class="dash-stat-icon stat-members">♙</div>
+          <div>
+            <span>Anggota</span>
+            <strong>30</strong>
+            <small>Anggota kelas</small>
+          </div>
+        </article>
+
+        <article class="dash-stat-card">
+          <div class="dash-stat-icon stat-tasks">📚</div>
+          <div>
+            <span>Tugas</span>
+            <strong>${data.tasks.length}</strong>
+            <small>Tugas tercatat</small>
+          </div>
+        </article>
+
+        <article class="dash-stat-card">
+          <div class="dash-stat-icon stat-announcements">📢</div>
+          <div>
+            <span>Pengumuman</span>
+            <strong>${data.announcements.length}</strong>
+            <small>Info tercatat</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="dash-section">
+      <div class="dash-section-heading">
+        <div>
+          <p class="dash-section-kicker">YOUR CLASS TOOLS</p>
+          <h2>Akses Cepat</h2>
+        </div>
+      </div>
+
+      <div class="dash-quick-grid">
+        ${quickLinks.map(item => `
+          <button class="dash-quick-card"
+            onclick="openDashboardPage('${item.page}')">
+            <span class="dash-quick-icon">${item.icon}</span>
+            <span class="dash-quick-title">${item.title}</span>
+            <span class="dash-quick-desc">${item.desc}</span>
+            <span class="dash-quick-arrow">↗</span>
+          </button>
+        `).join("")}
+      </div>
+    </section>
+
+    <section class="dash-section">
+      <div class="dash-section-heading">
+        <div>
+          <p class="dash-section-kicker">STAY ORGANIZED</p>
+          <h2>Aktivitas Kelas</h2>
+        </div>
+      </div>
+
+      <div class="dash-activity-grid">
+        <article class="dash-activity-card">
+          <div class="dash-activity-top">
+            <span class="dash-activity-icon">📚</span>
+            <span class="tag">${data.tasks.length} tugas</span>
+          </div>
+
+          <h3>Tugas Terbaru</h3>
+
+          ${recentTasks.length ? `
+            <div class="dash-mini-list">
+              ${recentTasks.map(task => `
+                <div class="dash-mini-item">
+                  <b>${safe(task.title)}</b>
+                  <small>⏰ ${safe(task.due || "Belum ditentukan")}</small>
+                </div>
+              `).join("")}
+            </div>
+          ` : `
+            <p class="dash-muted">Belum ada tugas tercatat.</p>
+          `}
+
+          <button class="dash-text-button"
+            onclick="openDashboardPage('tugas')">
+            Buka daftar tugas ↗
+          </button>
+        </article>
+
+        <article class="dash-activity-card">
+          <div class="dash-activity-top">
+            <span class="dash-activity-icon">💰</span>
+            <span class="tag">${pendingBills.length} belum lunas</span>
+          </div>
+
+          <h3>Ringkasan Tagihan</h3>
+
+          <strong class="dash-money">${money(unpaidTotal)}</strong>
+
+          <p class="dash-muted">
+            Total nominal tagihan yang belum lunas.
+          </p>
+
+          <button class="dash-text-button"
+            onclick="openDashboardPage('tagihan')">
+            Periksa tagihan ↗
+          </button>
+        </article>
+
+        <article class="dash-activity-card">
+          <div class="dash-activity-top">
+            <span class="dash-activity-icon">✓</span>
+            <span class="tag">Hari ini</span>
+          </div>
+
+          <h3>Absensi Hari Ini</h3>
+
+          <strong class="dash-money">
+            ${presentToday} hadir
+          </strong>
+
+          <p class="dash-muted">
+            ${attendanceToday.length} catatan kehadiran tersimpan hari ini.
+          </p>
+
+          <button class="dash-text-button"
+            onclick="openDashboardPage('absensi')">
+            Buka absensi ↗
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <section class="dash-section">
+      <div class="dash-section-heading">
+        <div>
+          <p class="dash-section-kicker">LATEST UPDATES</p>
+          <h2>Pengumuman Terbaru</h2>
+        </div>
+
+        <button class="dash-text-button"
+          onclick="openDashboardPage('pengumuman')">
+          Lihat semua ↗
+        </button>
+      </div>
+
+      ${recentAnnouncements.length ? `
+        <div class="dash-announcement-list">
+          ${recentAnnouncements.map(item => `
+            <article class="dash-announcement-card">
+              <div class="dash-announcement-icon">📢</div>
+              <div class="dash-announcement-content">
+                <h3>${safe(item.title)}</h3>
+                <p>${safe(item.desc)}</p>
+                <small>◷ ${safe(item.date || "Pengumuman kelas")}</small>
+              </div>
+            </article>
+          `).join("")}
+        </div>
+      ` : `
+        <div class="dash-empty">
+          <span>📭</span>
+          <p>Belum ada pengumuman.</p>
+        </div>
+      `}
+    </section>
+
+    <section class="dash-section">
+      <div class="dash-section-heading">
+        <div>
+          <p class="dash-section-kicker">OUR MEMORIES</p>
+          <h2>Kenangan XI-G 📸</h2>
+        </div>
+        <button class="dash-text-button"
+          onclick="openDashboardPage('gallery')">
+          Buka Gallery ↗
+        </button>
+      </div>
+
+      <button class="dash-memory-card"
+        onclick="openDashboardPage('gallery')">
+        <img
+          src="aset/Screenshot_20261010-155852.jpg"
+          alt="Kenangan kelas XI-G"
+          onerror="this.style.display='none'">
+
+        <div class="dash-memory-overlay">
+          <span>✦ OUR STORY</span>
+          <h3>Different People,<br>One Frequency.</h3>
+          <p>Setiap momen adalah bagian dari cerita kita.</p>
+          <span class="dash-memory-cta">Lihat Gallery ↗</span>
+        </div>
+      </button>
+    </section>
+
+    <section class="dash-quote">
+      <span>“</span>
+      <p>Satu kelas, banyak cerita.</p>
+      <small>OUR CLASS XI-G · MAN 4 BANJAR</small>
+    </section>
+  `;
+}
+
+
+  const latestAnnouncements = [...data.announcements]
+    .sort((a,b)=>Number(!!b.important)-Number(!!a.important))
+    .slice(0,3)
+      
+
+function openDashboardPage(target){
+  page = target;
+
+  document.querySelectorAll(".nav-item").forEach(button=>{
+    button.classList.toggle("active",button.dataset.page===target);
+  });
+
+  document.querySelector(".sidebar")?.classList.remove("open");
+  render();
+}
+
+
+function denah(){
+  return `<p class="muted">Isi nama siswa pada setiap meja. Perubahan tersimpan sementara selama halaman terbuka.</p>
+    <div class="teacher-seat">Meja Guru</div>
+    <div class="desk-grid">
+      ${data.seats.map((n,i)=>
+        `<div class="desk">
+          <small>Meja ${i+1}</small>
+          <input aria-label="Nama meja ${i+1}" value="${n}" placeholder="Nama siswa"
+            onchange="data.seats[${i}]=this.value">
+        </div>`
+      ).join("")}
+    </div>
+    <p>${btn("Kosongkan denah","data.seats.fill('');render()")}</p>`;
+}
+
+function announcements(){
+  return `${canEdit("pengumuman")?
+    addForm("Tambah pengumuman",
+      '<label>Judul<input id="aTitle" required></label><label>Isi<input id="aDesc" required></label>',
+      "addAnnouncement()"):""}
+    <div class="cards">
+      ${data.announcements.map((x,i)=>
+        `<article class="item-card">
+          <span class="tag">${x.date}</span>
+          <h3>${x.title}</h3><p>${x.desc}</p>
+          ${canEdit("pengumuman")?
+            btn("Hapus",`data.announcements.splice(${i},1);render()`,"action danger"):""}
+        </article>`
+      ).join("")}
+    </div>`;
+}
+
+function addAnnouncement(){
+  data.announcements.unshift({
+    title:$("#aTitle").value,
+    desc:$("#aDesc").value,
+    date:"Baru"
+  });
+  render();
+}
+
+function attendance(){
+  return `<div class="panel">
+    <h2>Catat kehadiran</h2>
+    <form onsubmit="saveAttendance();return false">
+      <div class="form-row">
+        <label>Nama siswa<input id="attName" required placeholder="Nama lengkap"></label>
+        <label>Status<select id="attStatus">
+          <option>Hadir</option><option>Izin</option><option>Sakit</option><option>Alpa</option>
+        </select></label>
+      </div>
+      <button class="primary">Simpan absensi</button>
+    </form>
+  </div>
+  <div class="panel" style="margin-top:15px">
+    <h2>Riwayat absensi</h2>
+    ${data.attendance.length?
+      data.attendance.map(x=>
+        `<div class="list-row"><b>${x.name}</b><small>${x.status} · ${x.date}</small></div>`
+      ).join(""):'<div class="empty">Belum ada absensi yang dicatat.</div>'}
+  </div>`;
+}
+
+function saveAttendance(){
+  data.attendance.unshift({
+    name:$("#attName").value,
+    status:$("#attStatus").value,
+    date:new Date().toLocaleDateString("id-ID")
+  });
+  render();
+}
+
+function tasks(){
+  return `${canEdit("tugas")?
+    addForm("Tambah tugas",
+      '<label>Nama tugas<input id="tTitle" required></label><label>Tenggat<input id="tDue" placeholder="Contoh: Jumat" required></label>',
+      "addTask()"):""}
+    <div class="cards">
+      ${data.tasks.map((x,i)=>
+        `<article class="item-card">
+          <span class="tag">${x.due}</span>
+          <h3>${x.title}</h3><p>${x.desc}</p>
+          ${canEdit("tugas")?
+            btn("Selesai / hapus",`data.tasks.splice(${i},1);render()`,"action"):""}
+        </article>`
+      ).join("")}
+    </div>`;
+}
+
+function addTask(){
+  data.tasks.push({
+    title:$("#tTitle").value,
+    desc:"Tugas kelas",
+    due:$("#tDue").value
+  });
+  render();
+}
+
+function bills(){
+  return `${canEdit("tagihan")?
+    addForm("Tambah tagihan",
+      '<label>Nama tagihan<input id="bName" required placeholder="Kas / buku / acara"></label><label>Nominal (Rp)<input id="bAmount" type="number" min="0" required></label>',
+      "addBill()"):""}
+    <div class="panel">
+      <h2>Daftar tagihan</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Tagihan</th><th>Nominal</th><th>Status</th><th>Aksi</th></tr></thead>
+        <tbody>
+          ${data.bills.map((x,i)=>
+            `<tr>
+              <td>${x.name}</td>
+              <td>Rp ${Number(x.amount).toLocaleString("id-ID")}</td>
+              <td><span class="tag">${x.paid?"Lunas":"Belum lunas"}</span></td>
+              <td>${canEdit("tagihan")?
+                btn(x.paid?"Batalkan":"Lunasi",`data.bills[${i}].paid=!data.bills[${i}].paid;render()`,"action")+" "+
+                btn("Hapus",`data.bills.splice(${i},1);render()`,"action danger"):"—"}</td>
+            </tr>`
+          ).join("")}
+        </tbody>
+      </table></div>
+    </div>`;
+}
+
+function addBill(){
+  data.bills.push({
+    name:$("#bName").value,
+    amount:Number($("#bAmount").value),
+    person:"Anggota",
+    paid:false
+  });
+  render();
+}
+
+function members(){
+  return `<div class="profile-grid">
+    ${data.profiles.map(x=>
+      `<article class="profile">
+        <div class="avatar">${x.name[0].toUpperCase()}</div>
+        <h3>${x.name}</h3><p>${x.role}</p>
+        <p style="margin-top:10px">${x.quote}</p>
+      </article>`
+    ).join("")}
+  </div>
+  <div class="panel" style="margin-top:15px">
+    <h2>Info profil</h2>
+    <p class="muted">Profil dapat dikembangkan dengan foto, tanggal lahir, hobi, prestasi, akun sosial, kutipan, dan tautan lagu Spotify.</p>
+  </div>`;
+}
+
+function playlist(){
+  return `<div class="panel playlist-card">
+    <h2>🎵 Playlist Kelas XI-G</h2>
+    <div class="playlist-content">
+      <img src="aset/Screenshot_20261010-155852.jpg"
+        alt="Logo Playlist XI-G" class="playlist-logo">
+      <h3>Playlist XI-G</h3>
+      <p>Kumpulan lagu pilihan untuk menemani hari-hari kelas XI-G.</p>
+      <a class="primary playlist-link"
+        href="https://open.spotify.com/playlist/7Ls5JdpWqrFIE02Gn75lfy?si=A8Kub2a-R4qf9mCMBOaZ1A&utm_source=copy-link"
+        target="_blank" rel="noopener noreferrer">
+        🎧 Buka Playlist di Spotify
+      </a>
+    </div>
+  </div>`;
+}
+
+function openSpotify(){
+  window.open(
+    "https://open.spotify.com/playlist/7Ls5JdpWqrFIE02Gn75lfy?si=A8Kub2a-R4qf9mCMBOaZ1A&utm_source=copy-link",
+    "_blank"
+  );
+}
+
+
+function channels(){
+  return `
+    <section class="ig-profile">
+      <div class="ig-cover">
+        <div class="ig-cover-label">✦ OUR CLASS XI-G ✦</div>
+        <div class="ig-cover-year">MAN 4 BANJAR · 2026/2027</div>
+      </div>
+
+      <div class="ig-profile-main">
+        <div class="ig-profile-top">
+          <img
+            src="aset/Icon.jpg"
+            alt="Foto profil Instagram Graphene XI-G"
+            class="ig-avatar"
+          >
+
+          <div class="ig-profile-info">
+            <h2>graphene.xig</h2>
+            <p class="ig-display-name">GRAPHENE · XI-G</p>
+
+            <div class="ig-stats">
+              <div><strong>30</strong><span>Minds</span></div>
+              <div><strong>1</strong><span>Frequency</span></div>
+              <div><strong>XI-G</strong><span>Family</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ig-bio">
+          <p class="ig-bio-title">✦ One class, countless stories.</p>
+          <p>🧠 30 minds, 1 frequency</p>
+          <p>👦 19 boys ~ 11 girls</p>
+          <p>⚛️ Physics in our DNA</p>
+          <p>👩‍🏫 Wali Kelas: Elsa Fujianah, S.Pd.</p>
+          <p class="ig-bio-tag">#GrapheneXIG #MAN4Banjar</p>
+        </div>
+
+        <a
+          class="ig-follow-btn"
+          href="https://www.instagram.com/graphene.xig?obrf=ZzFxZmRianYxa3Q3"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>◎</span> Kunjungi Instagram
+          <span class="ig-arrow">↗</span>
+        </a>
+
+        <div class="ig-bottom-note">
+          <span>✦</span>
+          <p>Different people, one frequency.</p>
+          <span>✦</span>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+
+
+function schedule(){
+  const days = [
+    {
+      day:"Senin", emoji:"☀️",
+      lessons:[
+        ["1","Upacara Bendera",""],
+        ["2–3","Bahasa Indonesia TL","Asmiyah, S.Pd."],
+        ["4–5","Fisika","Hj. Siti Asmah Khairiyah, M.Sc."],
+        ["6–7","Matematika TL","Elsa Fujianah, S.Pd."],
+        ["8–9","Sejarah","Ahmad Firdaus, S.Pd., M.Pd."],
+        ["10–11","Bahasa Inggris","Husin, S.Pd.I."]
+      ]
+    },
+    {
+      day:"Selasa", emoji:"🌤️",
+      lessons:[
+        ["1","Bahasa Indonesia TL","Asmiyah, S.Pd."],
+        ["2–3","Matematika Umum","Muzahir, S.Pd.I."],
+        ["4–5","Prakarya dan Kewirausahaan","Norhayatun Novia, S.Pd."],
+        ["6–7","Bahasa Indonesia TL","Asmiyah, S.Pd."],
+        ["8–9","Bahasa Indonesia","Hasbi Wayhie, M.Pd."],
+        ["10–11","Matematika TL","Elsa Fujianah, S.Pd."]
+      ]
+    },
+    {
+      day:"Rabu", emoji:"🌿",
+      lessons:[
+        ["1","Mulok: Tahfiz","Ruhana, S.Ag., M.Pd.I."],
+        ["2","Bahasa Indonesia","Hasbi Wayhie, M.Pd."],
+        ["3–4","SKI","Hj. Mutmainnah, S.Ag."],
+        ["5","Matematika TL","Elsa Fujianah, S.Pd."],
+        ["6–7","Fisika","Hj. Siti Asmah Khairiyah, M.Sc."],
+        ["8–9","Informatika","Rahmatullah, S.Pd."],
+        ["10–11","Fikih","Magdalena, S.Pd.I."]
+      ]
+    },
+    {
+      day:"Kamis", emoji:"📚",
+      lessons:[
+        ["1","Informatika","Rahmatullah, S.Pd."],
+        ["2–3","Bahasa Arab","Tarhiyah, S.Pd.I."],
+        ["4–5","PJOK","Muhammad Rifqi Rahman, S.Pd."],
+        ["6–7","Informatika","Rahmatullah, S.Pd."],
+        ["8–9","Seni dan Budaya","Faridah Muslimah, S.Pd."],
+        ["10–11","Qur'an Hadis","Ruhana, S.Ag., M.Pd.I."]
+      ]
+    },
+    {
+      day:"Jumat", emoji:"🌙",
+      lessons:[
+        ["1","Jumat Taqwa / Sehat",""],
+        ["2–3","Pendidikan Pancasila","Siti Masriah, S.Pd."],
+        ["4","Fisika","Hj. Siti Asmah Khairiyah, M.Sc."],
+        ["5","Matematika Umum","Muzahir, S.Pd.I."],
+        ["6–8","Istirahat Sholat Jumat",""],
+        ["9","Akidah Akhlak","H. Zahrani, S.Ag."]
+      ]
+    }
+  ];
+
+  const colors = [
+    "#e8e1f5","#dce9f4","#dcece3",
+    "#f4e4d4","#f7edc9","#eadfe0"
+  ];
+
+  return `
+    <section class="schedule-hero">
+      <div class="schedule-hero-icon">✦</div>
+      <p class="schedule-kicker">MAN 4 BANJAR · TAHUN AJARAN 2026/2027</p>
+      <h2>Jadwal Pelajaran</h2>
+      <p>XI-G · September – Oktober 2026</p>
+      <div class="schedule-hero-line"></div>
+      <span>LEARN TOGETHER, GROW TOGETHER</span>
+    </section>
+
+    <div class="schedule-note">
+      <span>📌</span>
+      <div>
+        <b>Jadwal kelas XI-G</b>
+        <p>Pilih hari untuk melihat mata pelajaran dan guru pengajar.</p>
+      </div>
+    </div>
+
+    <div class="schedule-days">
+      ${days.map((d,i)=>`
+        <button class="schedule-day ${i===0?"selected":""}"
+          onclick="showScheduleDay(${i},this)">
+          <span>${d.emoji}</span>
+          <b>${d.day}</b>
+        </button>
+      `).join("")}
+    </div>
+
+    <div id="scheduleDayContent">
+      ${scheduleDayContent(days[0],0,colors)}
+    </div>
+
+    <div class="schedule-breaks">
+      <div class="schedule-break">
+        <span>☕</span>
+        <div><b>Istirahat Pertama</b><small>Setelah pelajaran ke-3</small></div>
+      </div>
+      <div class="schedule-break">
+        <span>🍃</span>
+        <div><b>Istirahat Kedua</b><small>Setelah pelajaran ke-7</small></div>
+      </div>
+    </div>
+
+    <div class="panel schedule-original">
+      <h3>🖼️ Jadwal Asli Kelas XI-G</h3>
+      <p class="muted">Lihat gambar jadwal resmi. Cubit layar untuk memperbesar.</p>
+      <img
+        src="aset/jadwal-xig.jpg"
+        alt="Jadwal pelajaran resmi XI-G September–Oktober 2026"
+        class="schedule-original-image"
+        onclick="openScheduleImage()"
+      >
+      <button class="primary full" onclick="openScheduleImage()">
+        🔍 Lihat Jadwal Asli
+      </button>
+    </div>
+
+    <div id="scheduleViewer" class="schedule-viewer hidden"
+      onclick="if(event.target===this)closeScheduleImage()">
+      <button class="schedule-viewer-close"
+        onclick="closeScheduleImage()">✕</button>
+      <img src="aset/jadwal-xig.jpg"
+        alt="Jadwal asli XI-G yang diperbesar">
+    </div>
+  `;
+}
+
+function scheduleDayContent(day,index,colors){
+  return `
+    <section class="schedule-day-panel">
+      <div class="schedule-day-heading">
+        <span>${day.emoji}</span>
+        <div>
+          <h3>${day.day}</h3>
+          <p>${day.lessons.length} sesi pelajaran / kegiatan</p>
+        </div>
+      </div>
+
+      <div class="schedule-lesson-list">
+        ${day.lessons.map((lesson,i)=>`
+          <article class="schedule-lesson">
+            <div class="schedule-period"
+              style="background:${colors[(index+i)%colors.length]}">
+              ${lesson[0]}
+            </div>
+            <div class="schedule-lesson-info">
+              <b>${lesson[1]}</b>
+              ${lesson[2]?`<small>👩‍🏫 ${lesson[2]}</small>`:""}
+            </div>
+            <span class="schedule-lesson-star">✦</span>
+          </article>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function showScheduleDay(index,button){
+  const days = [
+    {day:"Senin",emoji:"☀️",lessons:[
+      ["1","Upacara Bendera",""],
+      ["2–3","Bahasa Indonesia TL","Asmiyah, S.Pd."],
+      ["4–5","Fisika","Hj. Siti Asmah Khairiyah, M.Sc."],
+      ["6–7","Matematika TL","Elsa Fujianah, S.Pd."],
+      ["8–9","Sejarah","Ahmad Firdaus, S.Pd., M.Pd."],
+      ["10–11","Bahasa Inggris","Husin, S.Pd.I."]
+    ]},
+    {day:"Selasa",emoji:"🌤️",lessons:[
+      ["1","Bahasa Indonesia TL","Asmiyah, S.Pd."],
+      ["2–3","Matematika Umum","Muzahir, S.Pd.I."],
+      ["4–5","Prakarya dan Kewirausahaan","Norhayatun Novia, S.Pd."],
+      ["6–7","Bahasa Indonesia TL","Asmiyah, S.Pd."],
+      ["8–9","Bahasa Indonesia","Hasbi Wayhie, M.Pd."],
+      ["10–11","Matematika TL","Elsa Fujianah, S.Pd."]
+    ]},
+    {day:"Rabu",emoji:"🌿",lessons:[
+      ["1","Mulok: Tahfiz","Ruhana, S.Ag., M.Pd.I."],
+      ["2","Bahasa Indonesia","Hasbi Wayhie, M.Pd."],
+      ["3–4","SKI","Hj. Mutmainnah, S.Ag."],
+      ["5","Matematika TL","Elsa Fujianah, S.Pd."],
+      ["6–7","Fisika","Hj. Siti Asmah Khairiyah, M.Sc."],
+      ["8–9","Informatika","Rahmatullah, S.Pd."],
+      ["10–11","Fikih","Magdalena, S.Pd.I."]
+    ]},
+    {day:"Kamis",emoji:"📚",lessons:[
+      ["1","Informatika","Rahmatullah, S.Pd."],
+      ["2–3","Bahasa Arab","Tarhiyah, S.Pd.I."],
+      ["4–5","PJOK","Muhammad Rifqi Rahman, S.Pd."],
+      ["6–7","Informatika","Rahmatullah, S.Pd."],
+      ["8–9","Seni dan Budaya","Faridah Muslimah, S.Pd."],
+      ["10–11","Qur'an Hadis","Ruhana, S.Ag., M.Pd.I."]
+    ]},
+    {day:"Jumat",emoji:"🌙",lessons:[
+      ["1","Jumat Taqwa / Sehat",""],
+      ["2–3","Pendidikan Pancasila","Siti Masriah, S.Pd."],
+      ["4","Fisika","Hj. Siti Asmah Khairiyah, M.Sc."],
+      ["5","Matematika Umum","Muzahir, S.Pd.I."],
+      ["6–8","Istirahat Sholat Jumat",""],
+      ["9","Akidah Akhlak","H. Zahrani, S.Ag."]
+    ]}
+  ];
+
+  document.querySelectorAll(".schedule-day").forEach(b=>
+    b.classList.toggle("selected",b===button)
+  );
+
+  const colors=[
+    "#e8e1f5","#dce9f4","#dcece3",
+    "#f4e4d4","#f7edc9","#eadfe0"
+  ];
+
+  document.getElementById("scheduleDayContent").innerHTML=
+    scheduleDayContent(days[index],index,colors);
+}
+
+function openScheduleImage(){
+  document.getElementById("scheduleViewer").classList.remove("hidden");
+}
+
+function closeScheduleImage(){
+  document.getElementById("scheduleViewer").classList.add("hidden");
+}
+
+function clothes(){
+  return `<div class="panel">
+    <h2>Jadwal pakaian</h2>
+    ${[
+      ["Senin","Putih abu-abu"],
+      ["Selasa","Pramuka"],
+      ["Rabu","Seragam madrasah"],
+      ["Kamis","Batik"],
+      ["Jumat","Muslim / Muslimah"]
+    ].map(x=>
+      `<div class="list-row"><b>${x[0]}</b><small>${x[1]}</small></div>`
+    ).join("")}
+    <p class="muted small">Silakan sesuaikan dengan ketentuan sekolah.</p>
+  </div>`;
+}
+
+// Pencarian
+$("#searchInput").addEventListener("input",e=>{
+  const q=e.target.value.toLowerCase();
+  $$(".list-row,.item-card,.profile,.desk").forEach(el=>{
+    el.style.display=el.textContent.toLowerCase().includes(q)?"":"none";
+  });
+});
+
+// Gallery XI-G
+function gallery(){
+  const frames=[
+    ["classic","Klasik"],
+    ["polaroid","Polaroid"],
+    ["coffee","Cokelat"],
+    ["film","Film"],
+    ["soft","Lembut"]
+  ];
+
+  return `<div class="panel gallery-upload">
+    <h2>📸 Kenangan XI-G</h2>
+    <p class="muted">Simpan momen berharga bersama teman sekelas.</p>
+    <label>Pilih foto kenangan
+      <input id="galleryFiles" type="file" accept="image/*" multiple>
+    </label>
+    <label>Pilih bingkai foto
+      <select id="galleryFrame">
+        ${frames.map(f=>`<option value="${f[0]}">${f[1]}</option>`).join("")}
+      </select>
+    </label>
+    <button class="primary" onclick="uploadGalleryPhotos()">+ Tambahkan Foto</button>
+    <p class="muted small">Pilih beberapa foto sekaligus.</p>
+  </div>
+
+  <div class="gallery-grid">
+    ${data.gallery.map((photo,i)=>
+      `<article class="gallery-card">
+        <div class="gallery-photo ${photo.frame}">
+          <img src="${photo.src}" alt="${photo.name}" onclick="viewGalleryPhoto(${i})">
+        </div>
+        <div class="gallery-caption">
+          <p>${photo.name}</p>
+          <button class="action" onclick="changeGalleryFrame(${i})">Ganti bingkai</button>
+          <button class="action" onclick="viewGalleryPhoto(${i})">Lihat foto</button>
+          <button class="action danger" onclick="deleteGalleryPhoto(${i})">Hapus</button>
+        </div>
+      </article>`
+    ).join("")}
+  </div>
+
+  ${data.gallery.length===0?
+    '<div class="empty">Belum ada foto kenangan. Yuk, tambahkan foto pertama!</div>':""}
+
+  <div id="galleryViewer" class="gallery-viewer hidden"
+    onclick="if(event.target===this)this.classList.add('hidden')">
+    <button class="gallery-close"
+      onclick="document.getElementById('galleryViewer').classList.add('hidden')">✕</button>
+    <img id="galleryLargeImage" src="" alt="Foto kenangan XI-G">
+  </div>`;
+}
+
+function uploadGalleryPhotos(){
+  const input=$("#galleryFiles");
+  const frame=$("#galleryFrame").value;
+  const files=[...input.files];
+
+  if(!files.length){
+    alert("Pilih foto terlebih dahulu.");
+    return;
   }
 
-  .ig-avatar {
-    width: 78px;
-    height: 78px;
+  const validFiles=files.filter(f=>f.type.startsWith("image/"));
+
+  if(!validFiles.length){
+    alert("Pilih berkas gambar yang valid.");
+    return;
   }
 
-  .ig-profile-info h2 {
-    font-size: 18px;
-  }
+  let completed=0;
 
-  .ig-stats {
-    gap: 12px;
-  }
+  validFiles.forEach(file=>{
+    const reader=new FileReader();
 
-  .ig-cover-label {
-    font-size: 17px;
-    letter-spacing: 2px;
-  }
-}
-
-
-/* Jadwal Pelajaran XI-G */
-.schedule-hero {
-  padding: 27px 18px;
-  border-radius: 20px;
-  text-align: center;
-  color: white;
-  background:
-    radial-gradient(circle at 15% 20%, #d2b48c55, transparent 35%),
-    linear-gradient(135deg, var(--navy), var(--coffee), var(--caput));
-  box-shadow: 0 8px 24px #202a4418;
-}
-
-.schedule-hero-icon {
-  color: var(--tan);
-  font-size: 28px;
-}
-
-.schedule-kicker {
-  font-size: 10px;
-  letter-spacing: 2px;
-  opacity: .8;
-}
-
-.schedule-hero h2 {
-  margin: 8px 0;
-  font-size: clamp(24px, 5vw, 34px);
-}
-
-.schedule-hero p {
-  margin: 7px 0;
-}
-
-.schedule-hero-line {
-  width: 55px;
-  height: 3px;
-  margin: 17px auto;
-  border-radius: 9px;
-  background: var(--tan);
-}
-
-.schedule-hero > span {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--tan);
-}
-
-.schedule-note {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  padding: 15px;
-  margin: 17px 0;
-  border: 1px solid var(--line);
-  background: var(--white);
-  border-radius: 14px;
-}
-
-.schedule-note > span {
-  font-size: 24px;
-}
-
-.schedule-note p {
-  margin: 4px 0 0;
-  color: var(--slate);
-  font-size: 12px;
-}
-
-.schedule-days {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 8px;
-  margin-bottom: 15px;
-}
-
-.schedule-day {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 12px 3px;
-  border: 1px solid var(--line);
-  border-radius: 13px;
-  background: var(--white);
-  color: var(--navy);
-  cursor: pointer;
-}
-
-.schedule-day > span {
-  font-size: 21px;
-}
-
-.schedule-day b {
-  font-size: 12px;
-}
-
-.schedule-day.selected {
-  background: var(--navy);
-  color: white;
-  border-color: var(--navy);
-  box-shadow: 0 4px 12px #202a4430;
-}
-
-.schedule-day-panel {
-  padding: 16px;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 17px;
-}
-
-.schedule-day-heading {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 12px;
-}
-
-.schedule-day-heading > span {
-  font-size: 29px;
-}
-
-.schedule-day-heading h3 {
-  margin: 0;
-  color: var(--navy);
-  font-size: 20px;
-}
-
-.schedule-day-heading p {
-  margin: 4px 0 0;
-  color: var(--slate);
-  font-size: 12px;
-}
-
-.schedule-lesson-list {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-
-.schedule-lesson {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 11px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--paper);
-}
-
-.schedule-period {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 42px;
-  min-height: 42px;
-  padding: 0 5px;
-  border-radius: 10px;
-  color: var(--navy);
-  font-size: 12px;
-  font-weight: 900;
-  text-align: center;
-}
-
-.schedule-lesson-info {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  flex: 1;
-  min-width: 0;
-}
-
-.schedule-lesson-info b {
-  color: var(--navy);
-  font-size: 13px;
-  overflow-wrap: anywhere;
-}
-
-.schedule-lesson-info small {
-  color: var(--slate);
-  font-size: 11px;
-  line-height: 1.5;
-  overflow-wrap: anywhere;
-}
-
-.schedule-lesson-star {
-  color: var(--tan);
-  font-size: 15px;
-}
-
-.schedule-breaks {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.schedule-break {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 13px;
-  background: #f7edc9;
-  border: 1px solid #e8dba7;
-  border-radius: 13px;
-}
-
-.schedule-break > span {
-  font-size: 22px;
-}
-
-.schedule-break div {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.schedule-break b {
-  font-size: 12px;
-  color: var(--coffee);
-}
-
-.schedule-break small {
-  font-size: 10px;
-  color: var(--slate);
-}
-
-.schedule-original {
-  margin-top: 18px;
-}
-
-.schedule-original h3 {
-  color: var(--navy);
-}
-
-.schedule-original-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 12px 0;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  cursor: zoom-in;
-}
-
-.schedule-viewer {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-  background: #111e;
-  overflow: auto;
-  touch-action: pan-x pan-y pinch-zoom;
-}
-
-.schedule-viewer.hidden {
-  display: none !important;
-}
-
-.schedule-viewer img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
-}
-
-.schedule-viewer-close {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  z-index: 1000;
-  width: 42px;
-  height: 42px;
-  border: 0;
-  border-radius: 50%;
-  background: white;
-  color: var(--navy);
-  font-size: 21px;
-  cursor: pointer;
-}
-
-@media (max-width: 420px) {
-  .schedule-days {
-    gap: 5px;
-  }
-
-  .schedule-day {
-    padding: 10px 1px;
-  }
-
-  .schedule-day b {
-    font-size: 10px;
-  }
-
-  .schedule-day-panel {
-    padding: 10px;
-  }
-
-  .schedule-lesson {
-    gap: 8px;
-    padding: 9px;
-  }
-
-  .schedule-lesson-info b {
-    font-size: 12px;
-  }
-
-  .schedule-lesson-info small {
-    font-size: 10px;
-  }
-
-  .schedule-breaks {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* =====================================
-   DASHBOARD MODERN - OUR CLASS XI-G
-===================================== */
-
-.dash-hero {
-  position: relative;
-  min-height: 260px;
-  padding: 28px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  border-radius: 22px;
-  color: white;
-  background:
-    linear-gradient(90deg, #202a44f5 0%, #202a44c9 60%, #202a4460 100%),
-    url("../aset/Screenshot_20261010-155852.jpg") center/cover no-repeat,
-    linear-gradient(135deg, #202a44, #6f4e37);
-  box-shadow: 0 10px 25px #202a4420;
-}
-
-.dash-hero-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(circle at 90% 15%, #d2b48c35, transparent 35%);
-}
-
-.dash-hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 460px;
-}
-
-.dash-eyebrow {
-  color: #e7cda7;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.dash-hero h1 {
-  margin: 17px 0 12px;
-  color: white;
-  font-size: clamp(27px, 5vw, 40px);
-  line-height: 1.12;
-}
-
-.dash-hero-content > p {
-  color: #f6f3ee;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.dash-hero-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 16px;
-}
-
-.dash-hero-tags span {
-  padding: 7px 11px;
-  border: 1px solid #d2b48c70;
-  border-radius: 20px;
-  background: #ffffff12;
-  color: #f5dfbd;
-  font-size: 11px;
-  font-weight: 800;
-}
-
-.dash-hero-button {
-  margin-top: 18px;
-  padding: 11px 15px;
-  border: 0;
-  border-radius: 10px;
-  background: #d2b48c;
-  color: #202a44;
-  font-size: 12px;
-  font-weight: 900;
-  cursor: pointer;
-}
-
-.dash-hero-button:active,
-.dash-quick-card:active {
-  transform: scale(.98);
-}
-
-.dash-hero-decoration {
-  position: absolute;
-  right: 15px;
-  bottom: -27px;
-  color: #ffffff0b;
-  font-size: clamp(80px, 17vw, 160px);
-  font-weight: 900;
-  letter-spacing: -8px;
-  pointer-events: none;
-}
-
-.dash-welcome-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin: 25px 0 16px;
-}
-
-.dash-section-kicker {
-  margin: 0 0 6px;
-  color: var(--coffee);
-  font-size: 9px;
-  font-weight: 900;
-  letter-spacing: 1.7px;
-}
-
-.dash-welcome-row h2,
-.dash-section-heading h2 {
-  margin: 0;
-  color: var(--navy);
-  font-size: 21px;
-}
-
-.dash-muted {
-  margin: 6px 0 0;
-  color: var(--slate);
-  font-size: 12px;
-}
-
-.dash-welcome-icon {
-  display: grid;
-  place-items: center;
-  width: 45px;
-  height: 45px;
-  flex-shrink: 0;
-  border-radius: 15px;
-  background: #d2b48c45;
-  color: var(--coffee);
-  font-size: 23px;
-}
-
-.dash-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-bottom: 28px;
-}
-
-.dash-stat-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-  padding: 15px 12px;
-  border: 1px solid var(--line);
-  border-radius: 15px;
-  background: var(--white);
-  box-shadow: 0 4px 15px #202a4408;
-}
-
-.dash-stat-icon {
-  display: grid;
-  place-items: center;
-  width: 37px;
-  height: 37px;
-  flex-shrink: 0;
-  border-radius: 12px;
-  font-size: 18px;
-}
-
-.stat-members {
-  color: #202a44;
-  background: #dce4f3;
-}
-
-.stat-tasks {
-  color: #6f4e37;
-  background: #f0dfd0;
-}
-
-.stat-announcements {
-  background: #f5e9c9;
-}
-
-.dash-stat-card > div:last-child {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  min-width: 0;
-}
-
-.dash-stat-card span {
-  color: var(--slate);
-  font-size: 10px;
-  line-height: 1.4;
-}
-
-.dash-stat-card strong {
-  color: var(--navy);
-  font-size: 22px;
-}
-
-.dash-stat-card small {
-  color: var(--slate);
-  font-size: 9px;
-}
-
-.dash-section {
-  margin: 26px 0;
-}
-
-.dash-section-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.dash-heading-mark {
-  color: var(--tan);
-  font-size: 25px;
-}
-
-.dash-quick-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 11px;
-}
-
-.dash-quick-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 130px;
-  padding: 15px 12px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--white);
-  color: var(--navy);
-  text-align: left;
-  cursor: pointer;
-  transition: transform .18s, box-shadow .18s;
-}
-
-.dash-quick-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 18px #202a4412;
-}
-
-.dash-quick-icon {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  margin-bottom: 13px;
-  border-radius: 13px;
-  background: var(--paper);
-  font-size: 22px;
-}
-
-.dash-quick-title {
-  font-size: 12px;
-  font-weight: 900;
-  line-height: 1.4;
-}
-
-.dash-quick-desc {
-  margin-top: 5px;
-  color: var(--slate);
-  font-size: 10px;
-  line-height: 1.5;
-}
-
-.dash-quick-arrow {
-  position: absolute;
-  top: 13px;
-  right: 12px;
-  color: var(--tan);
-  font-size: 16px;
-}
-
-.dash-text-button {
-  border: 0;
-  background: transparent;
-  color: var(--coffee);
-  font-size: 11px;
-  font-weight: 900;
-  cursor: pointer;
-}
-
-.dash-photo-grid {
-  display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  grid-template-rows: repeat(2, 105px);
-  gap: 10px;
-}
-
-.dash-photo-card {
-  position: relative;
-  min-width: 0;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  border-radius: 15px;
-  background: var(--navy);
-  text-align: left;
-  cursor: pointer;
-}
-
-.dash-photo-main {
-  grid-row: 1 / 3;
-}
-
-.dash-photo-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform .25s;
-}
-
-.dash-photo-card:hover img {
-  transform: scale(1.04);
-}
-
-.dash-photo-overlay {
-  position: absolute;
-  inset: 35% 0 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 6px;
-  padding: 15px;
-  color: white;
-  background: linear-gradient(transparent, #151923e8);
-}
-
-.dash-photo-overlay b {
-  font-size: 17px;
-}
-
-.dash-photo-overlay small {
-  font-size: 10px;
-}
-
-.dash-photo-side {
-  display: flex;
-  flex-direction: column;
-}
-
-.dash-photo-placeholder {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-  color: white;
-}
-
-.dash-photo-placeholder span {
-  font-size: 27px;
-}
+    reader.onload=()=>{
+      data.gallery.unshift({
+        src:reader.result,
+        name:file.name,
+        frame:frame
+      });
 
-.dash-photo-placeholder b {
-  font-size: 12px;
-}
-
-.placeholder-one {
-  background: linear-gradient(140deg, #708090, #202a44);
-}
-
-.placeholder-two {
-  background: linear-gradient(140deg, #d2b48c, #6f4e37);
-}
-
-.dash-photo-label {
-  padding: 8px;
-  background: var(--white);
-  color: var(--navy);
-  font-size: 10px;
-  font-weight: 800;
-  text-align: center;
-}
-
-.dash-photo-note {
-  margin: 9px 0 0;
-  color: var(--slate);
-  font-size: 10px;
-}
-
-.dash-announcement-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.dash-announcement-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 15px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--white);
-}
-
-.dash-announcement-icon {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  border-radius: 12px;
-  background: var(--paper);
-  font-size: 20px;
-}
-
-.dash-announcement-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.dash-announcement-content h3 {
-  margin: 4px 0 7px;
-  color: var(--navy);
-  font-size: 14px;
-  overflow-wrap: anywhere;
-}
-
-.dash-announcement-content p {
-  margin: 0 0 9px;
-  color: var(--slate);
-  font-size: 12px;
-  line-height: 1.6;
-  overflow-wrap: anywhere;
-}
-
-.dash-announcement-content small {
-  color: var(--slate);
-  font-size: 10px;
-}
-
-.dash-important-label {
-  display: inline-block;
-  padding: 4px 7px;
-  border-radius: 6px;
-  background: #f7e5d5;
-  color: #8b3d2e;
-  font-size: 9px;
-  font-weight: 900;
-  letter-spacing: .5px;
-}
-
-.dash-empty {
-  padding: 25px;
-  border: 1px dashed var(--line);
-  border-radius: 14px;
-  color: var(--slate);
-  text-align: center;
-}
-
-.dash-empty span {
-  font-size: 30px;
-}
-
-.dash-empty p {
-  font-size: 12px;
-}
-
-.dash-quote {
-  margin: 28px 0 8px;
-  padding: 22px 15px;
-  border: 1px solid var(--line);
-  border-radius: 17px;
-  background: linear-gradient(120deg, #f6f3ee, #eee4d8);
-  text-align: center;
-}
-
-.dash-quote > span {
-  color: var(--tan);
-  font-family: Georgia, serif;
-  font-size: 42px;
-  line-height: .8;
-}
-
-.dash-quote p {
-  margin: 8px 0;
-  color: var(--coffee);
-  font-size: 15px;
-  font-weight: 900;
-  font-style: italic;
-}
-
-.dash-quote small {
-  color: var(--slate);
-  font-size: 9px;
-  letter-spacing: 2px;
-  font-weight: 800;
-}
-
-.dash-photo-fallback {
-  background: linear-gradient(135deg, #202a44, #6f4e37);
-}
-
-@media (max-width: 600px) {
-  .dash-hero {
-    min-height: 250px;
-    padding: 22px 18px;
-    border-radius: 18px;
-  }
-
-  .dash-hero h1 {
-    font-size: 29px;
-  }
-
-  .dash-stats {
-    gap: 7px;
-  }
-
-  .dash-stat-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 11px 9px;
-  }
-
-  .dash-stat-icon {
-    width: 33px;
-    height: 33px;
-    font-size: 16px;
-  }
-
-  .dash-stat-card strong {
-    font-size: 20px;
-  }
-
-  .dash-stat-card span {
-    font-size: 9px;
-  }
-
-  .dash-stat-card small {
-    font-size: 8px;
-  }
-
-  .dash-quick-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
-  }
-
-  .dash-quick-card {
-    min-height: 120px;
-  }
-
-  .dash-welcome-row h2,
-  .dash-section-heading h2 {
-    font-size: 18px;
-  }
-
-  .dash-photo-grid {
-    grid-template-rows: repeat(2, 95px);
-    gap: 8px;
-  }
-
-  .dash-photo-overlay {
-    padding: 10px;
-  }
-
-  .dash-photo-overlay b {
-    font-size: 14px;
-  }
-}
-
-
-/* ===== OUR CLASS XI-G DASHBOARD ===== */
-
-.new-dashboard {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  color: var(--text, #29243b);
-  padding-bottom: 28px;
-}
-
-.new-dashboard button {
-  font: inherit;
-  cursor: pointer;
-}
-
-.welcome-card {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  display: flex;
-  align-items: center;
-  min-height: 225px;
-  padding: 28px;
-  border-radius: 25px;
-  color: white;
-  background: linear-gradient(120deg, #a855f7, #ec4899);
-  box-shadow: 0 12px 28px #c084fc35;
-}
-
-.welcome-content {
-  position: relative;
-  z-index: 2;
-  max-width: 440px;
-}
-
-.welcome-badge {
-  display: inline-block;
-  padding: 7px 11px;
-  border: 1px solid #ffffff55;
-  border-radius: 20px;
-  background: #ffffff20;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.welcome-card h1 {
-  margin: 17px 0 9px;
-  font-size: clamp(23px, 5vw, 34px);
-  line-height: 1.2;
-}
-
-.welcome-card p {
-  max-width: 370px;
-  margin: 0;
-  color: #ffffffeb;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.welcome-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 13px;
-  margin-top: 20px;
-  padding: 11px 16px;
-  border: 0;
-  border-radius: 12px;
-  background: white;
-  color: #a21caf;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.welcome-button span {
-  font-size: 18px;
-}
-
-.welcome-decoration {
-  position: absolute;
-  z-index: 1;
-  right: 7%;
-  top: 50%;
-  transform: translateY(-50%) rotate(-10deg);
-  font-size: clamp(65px, 12vw, 115px);
-  filter: drop-shadow(0 10px 15px #6b21a855);
-}
-
-.welcome-orb {
-  position: absolute;
-  z-index: -1;
-  border-radius: 50%;
-  background: #ffffff18;
-}
-
-.orb-one {
-  width: 190px;
-  height: 190px;
-  right: -35px;
-  top: -70px;
-}
-
-.orb-two {
-  width: 125px;
-  height: 125px;
-  right: 18%;
-  bottom: -90px;
-}
-
-.dash-section {
-  min-width: 0;
-}
-
-.dash-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 15px;
-}
-
-.dash-eyebrow {
-  color: #b04acb;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 1.6px;
-}
-
-.dash-heading h2 {
-  margin: 5px 0 0;
-  font-size: 21px;
-  font-weight: 850;
-}
-
-.dash-heading-icon {
-  font-size: 25px;
-}
+      completed++;
+      if(completed===validFiles.length)render();
+    };
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 13px;
-}
-
-.stat-card {
-  min-width: 0;
-  padding: 18px;
-  border: 1px solid #eadff3;
-  border-radius: 19px;
-  background: #fff;
-  box-shadow: 0 5px 18px #36204b08;
-}
-
-.stat-icon {
-  display: grid;
-  width: 39px;
-  height: 39px;
-  place-items: center;
-  border-radius: 13px;
-  font-size: 19px;
-}
-
-.stat-pink .stat-icon {
-  background: #fce7f3;
-}
-
-.stat-purple .stat-icon {
-  background: #f3e8ff;
-}
-
-.stat-blue .stat-icon {
-  background: #e0f2fe;
-}
-
-.stat-label,
-.stat-card small {
-  display: block;
-  color: #777184;
-  font-size: 12px;
-}
-
-.stat-label {
-  margin-top: 14px;
-}
-
-.stat-card strong {
-  display: block;
-  margin: 5px 0;
-  font-size: 29px;
-  font-weight: 900;
-}
-
-.shortcut-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.shortcut-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-  min-width: 0;
-  padding: 15px;
-  border: 1px solid #eee5f4;
-  border-radius: 17px;
-  background: #fff;
-  text-align: left;
-  transition: transform .18s, box-shadow .18s;
-}
-
-.shortcut-card:active {
-  transform: scale(.98);
-}
-
-.shortcut-icon {
-  display: grid;
-  flex-shrink: 0;
-  width: 43px;
-  height: 43px;
-  place-items: center;
-  border-radius: 14px;
-  font-size: 21px;
-}
-
-.shortcut-icon.pink {
-  background: #fce7f3;
-}
-
-.shortcut-icon.purple {
-  background: #f3e8ff;
-}
-
-.shortcut-icon.blue {
-  background: #e0f2fe;
-}
-
-.shortcut-icon.orange {
-  background: #ffedd5;
-}
-
-.shortcut-icon.green {
-  background: #dcfce7;
-}
-
-.shortcut-icon.yellow {
-  background: #fef9c3;
-}
-
-.shortcut-text {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 5px;
-  min-width: 0;
-}
-
-.shortcut-text strong {
-  font-size: 13px;
-}
-
-.shortcut-text small {
-  color: #81798c;
-  font-size: 11px;
-  line-height: 1.4;
-}
-
-.shortcut-arrow {
-  color: #b04acb;
-  font-size: 17px;
-}
-
-.text-button {
-  padding: 7px 0;
-  border: 0;
-  background: transparent;
-  color: #a13cc0;
-  font-size: 12px !important;
-  font-weight: 800;
-  white-space: nowrap;
-}
+    reader.onerror=()=>{
+      completed++;
+      if(completed===validFiles.length)render();
+    };
 
-.announcement-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    reader.readAsDataURL(file);
+  });
 }
 
-.announcement-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 13px;
-  padding: 16px;
-  border: 1px solid #eee5f4;
-  border-radius: 17px;
-  background: #fff;
+function changeGalleryFrame(i){
+  const frames=["classic","polaroid","coffee","film","soft"];
+  const current=frames.indexOf(data.gallery[i].frame);
+  data.gallery[i].frame=frames[(current+1)%frames.length];
+  render();
 }
 
-.announcement-icon {
-  display: grid;
-  flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  border-radius: 13px;
-  background: #f8e7fb;
-  font-size: 20px;
+function viewGalleryPhoto(i){
+  const viewer=$("#galleryViewer");
+  $("#galleryLargeImage").src=data.gallery[i].src;
+  viewer.classList.remove("hidden");
 }
-
-.announcement-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.announcement-content strong {
-  font-size: 14px;
-  overflow-wrap: anywhere;
-}
-
-.announcement-content p {
-  margin: 7px 0 0;
-  color: #777184;
-  font-size: 12px;
-  line-height: 1.7;
-  overflow-wrap: anywhere;
-}
-
-.important-label {
-  display: inline-block;
-  margin-top: 9px;
-  padding: 4px 8px;
-  border-radius: 7px;
-  background: #ffe4e6;
-  color: #be123c;
-  font-size: 9px;
-  font-weight: 900;
-}
-
-.empty-announcements {
-  padding: 25px 15px;
-  border: 1px dashed #e5d4ef;
-  border-radius: 17px;
-  background: #fffaff;
-  text-align: center;
-}
-
-.empty-announcements span {
-  font-size: 28px;
-}
-
-.empty-announcements strong {
-  display: block;
-  margin-top: 9px;
-}
-
-.empty-announcements p {
-  margin-bottom: 0;
-  color: #81798c;
-  font-size: 12px;
-}
-
-.class-quote {
-  position: relative;
-  overflow: hidden;
-  padding: 25px;
-  border: 1px solid #f2d8ef;
-  border-radius: 22px;
-  background: linear-gradient(135deg, #fff1f7, #f4edff);
-  text-align: center;
-}
-
-.quote-mark {
-  color: #d946a5;
-  font-family: Georgia, serif;
-  font-size: 52px;
-  line-height: 1;
-}
-
-.class-quote p {
-  max-width: 440px;
-  margin: 4px auto 14px;
-  color: #593b69;
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 1.7;
-}
-
-.quote-footer {
-  color: #a34caa;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 1px;
-}
-
-@media (max-width: 600px) {
-  .new-dashboard {
-    gap: 22px;
-  }
-
-  .welcome-card {
-    min-height: 230px;
-    padding: 22px 19px;
-    border-radius: 21px;
-  }
-
-  .welcome-content {
-    max-width: 85%;
-  }
-
-  .welcome-card p {
-    font-size: 12px;
-  }
-
-  .welcome-decoration {
-    right: -5px;
-    top: 17px;
-    transform: none;
-    font-size: 54px;
-    opacity: .8;
-  }
-
-  .stats-grid {
-    gap: 8px;
-  }
-
-  .stat-card {
-    padding: 12px 10px;
-    border-radius: 15px;
-  }
-
-  .stat-icon {
-    width: 33px;
-    height: 33px;
-    font-size: 16px;
-  }
-
-  .stat-label,
-  .stat-card small {
-    font-size: 10px;
-  }
-
-  .stat-card strong {
-    font-size: 24px;
-  }
-
-  .dash-heading h2 {
-    font-size: 19px;
-  }
-
-  .shortcut-grid {
-    gap: 9px;
-  }
-
-  .shortcut-card {
-    gap: 9px;
-    padding: 12px 9px;
-  }
-
-  .shortcut-icon {
-    width: 35px;
-    height: 35px;
-    font-size: 17px;
-    border-radius: 11px;
-  }
-
-  .shortcut-text strong {
-    font-size: 12px;
-  }
-
-  .shortcut-text small {
-    font-size: 10px;
-  }
-
-  .shortcut-arrow {
-    font-size: 14px;
-  }
-
-  .announcement-card {
-    padding: 13px;
-  }
-
-  .class-quote {
-    padding: 20px 16px;
-  }
-}
-
-@media (max-width: 360px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stat-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    column-gap: 12px;
-  }
-
-  .stat-label {
-    margin-top: 0;
-  }
-
-  .stat-card strong {
-    grid-column: 2;
-  }
 
-  .stat-card small {
-    grid-column: 2;
-  }
+function deleteGalleryPhoto(i){
+  if(!confirm("Hapus foto kenangan ini?"))return;
+  data.gallery.splice(i,1);
+  render();
 }
