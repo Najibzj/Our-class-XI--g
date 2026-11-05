@@ -729,8 +729,9 @@ function channels(){
       </div>
     </section>
   `;
+}
 
-schedule(){
+function schedule(){
   const days = [
     {
       day:"Senin", emoji:"☀️",
