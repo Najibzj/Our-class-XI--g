@@ -859,3 +859,236 @@ schedule(){
         alt="Jadwal asli XI-G yang diperbesar">
     </div>
   `;
+
+scheduleDayContent(day,index,colors){
+  return `
+    <section class="schedule-day-panel">
+      <div class="schedule-day-heading">
+        <span>${day.emoji}</span>
+        <div>
+          <h3>${day.day}</h3>
+          <p>${day.lessons.length} sesi pelajaran / kegiatan</p>
+        </div>
+      </div>
+
+      <div class="schedule-lesson-list">
+        ${day.lessons.map((lesson,i)=>`
+          <article class="schedule-lesson">
+            <div class="schedule-period"
+              style="background:${colors[(index+i)%colors.length]}">
+              ${lesson[0]}
+            </div>
+            <div class="schedule-lesson-info">
+              <b>${lesson[1]}</b>
+              ${lesson[2]?`<small>👩‍🏫 ${lesson[2]}</small>`:""}
+            </div>
+            <span class="schedule-lesson-star">✦</span>
+          </article>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function showScheduleDay(index,button){
+  const days = [
+    {day:"Senin",emoji:"☀️",lessons:[
+      ["1","Upacara Bendera",""],
+      ["2–3","Bahasa Indonesia TL","Asmiyah, S.Pd."],
+      ["4–5","Fisika","Hj. Siti Asmah Khairiyah, M.Sc."],
+      ["6–7","Matematika TL","Elsa Fujianah, S.Pd."],
+      ["8–9","Sejarah","Ahmad Firdaus, S.Pd., M.Pd."],
+      ["10–11","Bahasa Inggris","Husin, S.Pd.I."]
+    ]},
+    {day:"Selasa",emoji:"🌤️",lessons:[
+      ["1","Bahasa Indonesia TL","Asmiyah, S.Pd."],
+      ["2–3","Matematika Umum","Muzahir, S.Pd.I."],
+      ["4–5","Prakarya dan Kewirausahaan","Norhayatun Novia, S.Pd."],
+      ["6–7","Bahasa Indonesia TL","Asmiyah, S.Pd."],
+      ["8–9","Bahasa Indonesia","Hasbi Wayhie, M.Pd."],
+      ["10–11","Matematika TL","Elsa Fujianah, S.Pd."]
+    ]},
+    {day:"Rabu",emoji:"🌿",lessons:[
+      ["1","Mulok: Tahfiz","Ruhana, S.Ag., M.Pd.I."],
+      ["2","Bahasa Indonesia","Hasbi Wayhie, M.Pd."],
+      ["3–4","SKI","Hj. Mutmainnah, S.Ag."],
+      ["5","Matematika TL","Elsa Fujianah, S.Pd."],
+      ["6–7","Fisika","Hj. Siti Asmah Khairiyah, M.Sc."],
+      ["8–9","Informatika","Rahmatullah, S.Pd."],
+      ["10–11","Fikih","Magdalena, S.Pd.I."]
+    ]},
+    {day:"Kamis",emoji:"📚",lessons:[
+      ["1","Informatika","Rahmatullah, S.Pd."],
+      ["2–3","Bahasa Arab","Tarhiyah, S.Pd.I."],
+      ["4–5","PJOK","Muhammad Rifqi Rahman, S.Pd."],
+      ["6–7","Informatika","Rahmatullah, S.Pd."],
+      ["8–9","Seni dan Budaya","Faridah Muslimah, S.Pd."],
+      ["10–11","Qur'an Hadis","Ruhana, S.Ag., M.Pd.I."]
+    ]},
+    {day:"Jumat",emoji:"🌙",lessons:[
+      ["1","Jumat Taqwa / Sehat",""],
+      ["2–3","Pendidikan Pancasila","Siti Masriah, S.Pd."],
+      ["4","Fisika","Hj. Siti Asmah Khairiyah, M.Sc."],
+      ["5","Matematika Umum","Muzahir, S.Pd.I."],
+      ["6–8","Istirahat Sholat Jumat",""],
+      ["9","Akidah Akhlak","H. Zahrani, S.Ag."]
+    ]}
+  ];
+
+  document.querySelectorAll(".schedule-day").forEach(b=>
+    b.classList.toggle("selected",b===button)
+  );
+
+  const colors=[
+    "#e8e1f5","#dce9f4","#dcece3",
+    "#f4e4d4","#f7edc9","#eadfe0"
+  ];
+
+  document.getElementById("scheduleDayContent").innerHTML=
+    scheduleDayContent(days[index],index,colors);
+}
+
+function openScheduleImage(){
+  document.getElementById("scheduleViewer").classList.remove("hidden");
+}
+
+function closeScheduleImage(){
+  document.getElementById("scheduleViewer").classList.add("hidden");
+}
+
+function clothes(){
+  return `<div class="panel">
+    <h2>Jadwal pakaian</h2>
+    ${[
+      ["Senin","Putih abu-abu"],
+      ["Selasa","Pramuka"],
+      ["Rabu","Seragam madrasah"],
+      ["Kamis","Batik"],
+      ["Jumat","Muslim / Muslimah"]
+    ].map(x=>
+      `<div class="list-row"><b>${x[0]}</b><small>${x[1]}</small></div>`
+    ).join("")}
+    <p class="muted small">Silakan sesuaikan dengan ketentuan sekolah.</p>
+  </div>`;
+}
+
+// Pencarian
+$("#searchInput").addEventListener("input",e=>{
+  const q=e.target.value.toLowerCase();
+  $$(".list-row,.item-card,.profile,.desk").forEach(el=>{
+    el.style.display=el.textContent.toLowerCase().includes(q)?"":"none";
+  });
+});
+
+// Gallery XI-G
+function gallery(){
+  const frames=[
+    ["classic","Klasik"],
+    ["polaroid","Polaroid"],
+    ["coffee","Cokelat"],
+    ["film","Film"],
+    ["soft","Lembut"]
+  ];
+
+  return `<div class="panel gallery-upload">
+    <h2>📸 Kenangan XI-G</h2>
+    <p class="muted">Simpan momen berharga bersama teman sekelas.</p>
+    <label>Pilih foto kenangan
+      <input id="galleryFiles" type="file" accept="image/*" multiple>
+    </label>
+    <label>Pilih bingkai foto
+      <select id="galleryFrame">
+        ${frames.map(f=>`<option value="${f[0]}">${f[1]}</option>`).join("")}
+      </select>
+    </label>
+    <button class="primary" onclick="uploadGalleryPhotos()">+ Tambahkan Foto</button>
+    <p class="muted small">Pilih beberapa foto sekaligus.</p>
+  </div>
+
+  <div class="gallery-grid">
+    ${data.gallery.map((photo,i)=>
+      `<article class="gallery-card">
+        <div class="gallery-photo ${photo.frame}">
+          <img src="${photo.src}" alt="${photo.name}" onclick="viewGalleryPhoto(${i})">
+        </div>
+        <div class="gallery-caption">
+          <p>${photo.name}</p>
+          <button class="action" onclick="changeGalleryFrame(${i})">Ganti bingkai</button>
+          <button class="action" onclick="viewGalleryPhoto(${i})">Lihat foto</button>
+          <button class="action danger" onclick="deleteGalleryPhoto(${i})">Hapus</button>
+        </div>
+      </article>`
+    ).join("")}
+  </div>
+
+  ${data.gallery.length===0?
+    '<div class="empty">Belum ada foto kenangan. Yuk, tambahkan foto pertama!</div>':""}
+
+  <div id="galleryViewer" class="gallery-viewer hidden"
+    onclick="if(event.target===this)this.classList.add('hidden')">
+    <button class="gallery-close"
+      onclick="document.getElementById('galleryViewer').classList.add('hidden')">✕</button>
+    <img id="galleryLargeImage" src="" alt="Foto kenangan XI-G">
+  </div>`;
+}
+
+function uploadGalleryPhotos(){
+  const input=$("#galleryFiles");
+  const frame=$("#galleryFrame").value;
+  const files=[...input.files];
+
+  if(!files.length){
+    alert("Pilih foto terlebih dahulu.");
+    return;
+  }
+
+  const validFiles=files.filter(f=>f.type.startsWith("image/"));
+
+  if(!validFiles.length){
+    alert("Pilih berkas gambar yang valid.");
+    return;
+  }
+
+  let completed=0;
+
+  validFiles.forEach(file=>{
+    const reader=new FileReader();
+
+    reader.onload=()=>{
+      data.gallery.unshift({
+        src:reader.result,
+        name:file.name,
+        frame:frame
+      });
+
+      completed++;
+      if(completed===validFiles.length)render();
+    };
+
+    reader.onerror=()=>{
+      completed++;
+      if(completed===validFiles.length)render();
+    };
+
+    reader.readAsDataURL(file);
+  });
+}
+
+function changeGalleryFrame(i){
+  const frames=["classic","polaroid","coffee","film","soft"];
+  const current=frames.indexOf(data.gallery[i].frame);
+  data.gallery[i].frame=frames[(current+1)%frames.length];
+  render();
+}
+
+function viewGalleryPhoto(i){
+  const viewer=$("#galleryViewer");
+  $("#galleryLargeImage").src=data.gallery[i].src;
+  viewer.classList.remove("hidden");
+}
+
+function deleteGalleryPhoto(i){
+  if(!confirm("Hapus foto kenangan ini?"))return;
+  data.gallery.splice(i,1);
+  render();
+}
