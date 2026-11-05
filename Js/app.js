@@ -863,8 +863,7 @@ function schedule(){
   `;
 }
 
-function
-scheduleDayContent(day,index,colors){
+function scheduleDayContent(day,index,colors){
   return `
     <section class="schedule-day-panel">
       <div class="schedule-day-heading">
@@ -874,7 +873,6 @@ scheduleDayContent(day,index,colors){
           <p>${day.lessons.length} sesi pelajaran / kegiatan</p>
         </div>
       </div>
-
       <div class="schedule-lesson-list">
         ${day.lessons.map((lesson,i)=>`
           <article class="schedule-lesson">
