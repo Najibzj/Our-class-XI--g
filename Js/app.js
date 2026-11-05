@@ -861,7 +861,9 @@ function schedule(){
         alt="Jadwal asli XI-G yang diperbesar">
     </div>
   `;
+}
 
+function
 scheduleDayContent(day,index,colors){
   return `
     <section class="schedule-day-panel">
