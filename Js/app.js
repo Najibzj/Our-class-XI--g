@@ -863,34 +863,6 @@ function schedule(){
   `;
 }
 
-function scheduleDayContent(day,index,colors){
-  return `
-    <section class="schedule-day-panel">
-      <div class="schedule-day-heading">
-        <span>${day.emoji}</span>
-        <div>
-          <h3>${day.day}</h3>
-          <p>${day.lessons.length} sesi pelajaran / kegiatan</p>
-        </div>
-      </div>
-      <div class="schedule-lesson-list">
-        ${day.lessons.map((lesson,i)=>`
-          <article class="schedule-lesson">
-            <div class="schedule-period"
-              style="background:${colors[(index+i)%colors.length]}">
-              ${lesson[0]}
-            </div>
-            <div class="schedule-lesson-info">
-              <b>${lesson[1]}</b>
-              ${lesson[2]?`<small>👩‍🏫 ${lesson[2]}</small>`:""}
-            </div>
-            <span class="schedule-lesson-star">✦</span>
-          </article>
-        `).join("")}
-      </div>
-    </section>
-  `;
-}
 
 function showScheduleDay(index,button){
   const days = [
