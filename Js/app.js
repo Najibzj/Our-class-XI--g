@@ -918,9 +918,8 @@ function showScheduleDay(index,button){
     "#f4e4d4","#f7edc9","#eadfe0"
   ];
 
-  document.getElementById("scheduleDayContent").innerHTML=
-}
- scheduleDayContent(days[index],index,colors);
+  document.getElementById("scheduleDayContent").innerHTML =
+  scheduleDayContent(days[index],index,colors);
 }
 
 function openScheduleImage(){
