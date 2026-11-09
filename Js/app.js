@@ -919,8 +919,7 @@ function showScheduleDay(index,button){
   ];
 
   document.getElementById("scheduleDayContent").innerHTML =
-  scheduleDayContent(days[index],index,colors);
-}
+  "<div class='empty'>Jadwal hari ini belum tersedia.</div>";
 
 function openScheduleImage(){
   document.getElementById("scheduleViewer").classList.remove("hidden");
