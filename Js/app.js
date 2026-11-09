@@ -920,7 +920,7 @@ function showScheduleDay(index,button){
 
   document.getElementById("scheduleDayContent").innerHTML=
 }
-function scheduleDayContent(days[index],index,colors);
+ scheduleDayContent(days[index],index,colors);
 }
 
 function openScheduleImage(){
