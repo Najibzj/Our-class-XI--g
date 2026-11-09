@@ -1,71 +1,102 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#202a44"><title>Our Class XI-G</title><link rel="stylesheet" href="./css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#202a44">
+  <title>Our Class XI-G</title>
+  <link rel="stylesheet" href="./css/style.css">
   <link rel="icon" type="image/png" href="aset/Icon.jpg">
-</head><body>
-<div id="loginScreen" class="login-wrap">
-  <section class="login-card">
-    <div class="logo">XI-G</div>
-    <p class="eyebrow">MAN 4 BANJAR</p>
-    <h1>Our Class</h1>
-    <p class="muted">Satu kelas, banyak cerita.</p>
+</head>
+<body>
+  <div id="loginScreen" class="login-wrap">
+    <section class="login-card">
+      <div class="logo">XI-G</div>
+      <p class="eyebrow">MAN 4 BANJAR</p>
+      <h1>Our Class</h1>
+      <p class="muted">Satu kelas, banyak cerita.</p>
+      <div class="role-picks">
+        <button class="role-btn active" data-kind="Murid">Murid</button>
+        <button class="role-btn" data-kind="Guru">Guru</button>
+      </div>
+      <label>Jabatan / akses
+        <select id="loginRole">
+          <option value="anggota">Anggota</option>
+          <option value="sekretaris">Sekretaris</option>
+          <option value="bendahara">Bendahara</option>
+          <option value="ketua">Ketua</option>
+        </select>
+      </label>
+      <label id="usernameLabel" style="display:none">Nama pengguna
+        <input id="username" placeholder="Nama pengguna" autocomplete="username">
+      </label>
+      <label id="passwordLabel">Kata sandi
+        <input id="password" type="password" placeholder="Masukkan kata sandi" autocomplete="current-password">
+      </label>
+      <button id="loginBtn" class="primary full">Masuk</button>
+      <p id="loginMsg" class="small muted">Anggota dapat masuk tanpa kata sandi.</p>
+    </section>
+  </div>
 
-    <div class="role-picks">
-      <button class="role-btn active" data-kind="Murid">Murid</button>
-      <button class="role-btn" data-kind="Guru">Guru</button>
-    </div>
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo small-logo">XI-G</div><div><b>Our Class</b><small>MAN 4 Banjar</small></div></div>
+      <div class="side-user"><div class="avatar">N</div><div><b id="userLabel">Najib</b><small id="roleLabel">Anggota</small></div></div>
+      <nav id="nav">
+        <button data-page="dashboard" class="nav-item active">⌂ <span>Dashboard</span></button>
+        <button data-page="denah" class="nav-item">▦ <span>Denah Kelas</span></button>
+        <button data-page="pengumuman" class="nav-item">◉ <span>Pengumuman</span></button>
+        <button data-page="absensi" class="nav-item">✓ <span>Absensi</span></button>
+        <button data-page="tugas" class="nav-item">▤ <span>Tugas</span></button>
+        <button data-page="tagihan" class="nav-item">Rp <span>Tagihan</span></button>
+        <button data-page="anggota" class="nav-item">♙ <span>Profil Anggota</span></button>
+        <button data-page="gallery" class="nav-item">▧ <span>Gallery XI-G</span></button>
+        <button data-page="playlist" class="nav-item">♫ <span>Playlist Kelas</span></button>
+        <button data-page="saluran" class="nav-item">◎ <span>Sosmed & Saluran</span></button>
+        <button data-page="jadwal" class="nav-item">▣ <span>Jadwal Pelajaran</span></button>
+        <button data-page="pakaian" class="nav-item">♧ <span>Jadwal Pakaian</span></button>
+      </nav>
+      <button id="logoutBtn" class="logout">↪ Keluar</button>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <button id="menuBtn" class="icon-btn">☰</button>
+        <div class="search">⌕ <input id="searchInput" placeholder="Cari di kelas..."></div>
+        <div class="top-avatar">N</div>
+      </header>
+      <div id="pageContent" class="content"></div>
+      <footer>Our Class XI-G · MAN 4 Banjar</footer>
+    </main>
+  </div>
 
-    <label>Jabatan / akses
-      <select id="loginRole">
-        <option value="anggota">Anggota</option>
-        <option value="sekretaris">Sekretaris</option>
-        <option value="bendahara">Bendahara</option>
-        <option value="ketua">Ketua</option>
-      </select>
-    </label>
-
-    <label id="usernameLabel" style="display:none">
-      Nama pengguna
-      <input id="username" placeholder="Nama pengguna" autocomplete="username">
-    </label>
-
-    <label id="passwordLabel">
-      Kata sandi
-      <input id="password" type="password"
-        placeholder="Masukkan kata sandi"
-        autocomplete="current-password">
-    </label>
-
-<button id="loginBtn" class="primary full" >Masuk</button>
-    <p id="loginMsg" class="small muted">
-      Anggota dapat masuk tanpa kata sandi.
-    </p>
-  </section>
-</div>
-<div id="app" class="app hidden">
-<aside class="sidebar">
- <div class="brand"><div class="logo small-logo">XI-G</div><div><b>Our Class</b><small>MAN 4 Banjar</small></div></div>
- <div class="side-user"><div class="avatar">N</div><div><b id="userLabel">Najib</b><small id="roleLabel">Anggota</small></div></div>
- <nav id="nav">
- <button data-page="dashboard" class="nav-item active">⌂ <span>Dashboard</span></button>
- <button data-page="denah" class="nav-item">▦ <span>Denah Kelas</span></button>
- <button data-page="pengumuman" class="nav-item">◉ <span>Pengumuman</span></button>
- <button data-page="absensi" class="nav-item">✓ <span>Absensi</span></button>
- <button data-page="tugas" class="nav-item">▤ <span>Tugas</span></button>
- <button data-page="tagihan" class="nav-item">Rp <span>Tagihan</span></button>
- <button data-page="anggota" class="nav-item">♙ <span>Profil Anggota</span></button>
-   <button data-page="gallery" class="nav-item">▧ <span>Gallery XI-G</span></button>
- <button data-page="playlist" class="nav-item">♫ <span>Playlist Kelas</span></button>
- <button data-page="saluran" class="nav-item">◎ <span>Sosmed & Saluran</span></button>
- <button data-page="jadwal" class="nav-item">▣ <span>Jadwal Pelajaran</span></button>
- <button data-page="pakaian" class="nav-item">♧ <span>Jadwal Pakaian</span></button>
- </nav><button id="logoutBtn" class="logout">↪ Keluar</button>
-</aside>
-<main class="main">
-<header class="topbar"><button id="menuBtn" class="icon-btn">☰</button><div class="search">⌕ <input id="searchInput" placeholder="Cari di kelas..."></div><div class="top-avatar">N</div></header>
-<div id="pageContent" class="content"></div><footer>Our Class XI-G · MAN 4 Banjar</footer>
-</main>
-</div><script src="Js/app.js" defer></script>
-</body></html>
+  <script>
+    // Abaikan hanya alert diagnostik; alert validasi aplikasi tetap berfungsi.
+    window.__nativeAlert = window.alert.bind(window);
+    window.alert = message => {
+      if (message !== "APP.JS BERHASIL DIBACA") window.__nativeAlert(message);
+    };
+  </script>
+  <script src="Js/app.js" defer></script>
+  <script>
+    window.alert = window.__nativeAlert;
+    window.XIG_SCHEDULE_DAYS = [
+      {day:"Senin",emoji:"☀️",lessons:[["1","Upacara Bendera",""],["2–3","Bahasa Indonesia TL","Asmiyah, S.Pd."],["4–5","Fisika","Hj. Siti Asmah Khairiyah, M.Sc."],["6–7","Matematika TL","Elsa Fujianah, S.Pd."],["8–9","Sejarah","Ahmad Firdaus, S.Pd., M.Pd."],["10–11","Bahasa Inggris","Husin, S.Pd.I."]] },
+      {day:"Selasa",emoji:"🌤️",lessons:[["1","Bahasa Indonesia TL","Asmiyah, S.Pd."],["2–3","Matematika Umum","Muzahir, S.Pd.I."],["4–5","Prakarya dan Kewirausahaan","Norhayatun Novia, S.Pd."],["6–7","Bahasa Indonesia TL","Asmiyah, S.Pd."],["8–9","Bahasa Indonesia","Hasbi Wayhie, M.Pd."],["10–11","Matematika TL","Elsa Fujianah, S.Pd."]] },
+      {day:"Rabu",emoji:"🌿",lessons:[["1","Mulok: Tahfiz","Ruhana, S.Ag., M.Pd.I."],["2","Bahasa Indonesia","Hasbi Wayhie, M.Pd."],["3–4","SKI","Hj. Mutmainnah, S.Ag."],["5","Matematika TL","Elsa Fujianah, S.Pd."],["6–7","Fisika","Hj. Siti Asmah Khairiyah, M.Sc."],["8–9","Informatika","Rahmatullah, S.Pd."],["10–11","Fikih","Magdalena, S.Pd.I."]] },
+      {day:"Kamis",emoji:"📚",lessons:[["1","Informatika","Rahmatullah, S.Pd."],["2–3","Bahasa Arab","Tarhiyah, S.Pd.I."],["4–5","PJOK","Muhammad Rifqi Rahman, S.Pd."],["6–7","Informatika","Rahmatullah, S.Pd."],["8–9","Seni dan Budaya","Faridah Muslimah, S.Pd."],["10–11","Qur'an Hadis","Ruhana, S.Ag., M.Pd.I."]] },
+      {day:"Jumat",emoji:"🌙",lessons:[["1","Jumat Taqwa / Sehat",""],["2–3","Pendidikan Pancasila","Siti Masriah, S.Pd."],["4","Fisika","Hj. Siti Asmah Khairiyah, M.Sc."],["5","Matematika Umum","Muzahir, S.Pd.I."],["6–8","Istirahat Sholat Jumat",""],["9","Akidah Akhlak","H. Zahrani, S.Ag."]] }
+    ];
+    window.scheduleDayContent = function(day,index,colors){
+      return `<section class="schedule-day-panel"><div class="schedule-day-heading"><span>${day.emoji}</span><div><h3>${day.day}</h3><p>Jadwal pelajaran kelas XI-G</p></div></div><div class="schedule-lesson-list">${day.lessons.map((lesson,i)=>`<article class="schedule-lesson"><span class="schedule-period" style="background:${colors[i%colors.length]}">${lesson[0]}</span><div class="schedule-lesson-info"><b>${lesson[1]}</b><small>${lesson[2] || "Kegiatan kelas"}</small></div><span class="schedule-lesson-star">✦</span></article>`).join("")}</div></section>`;
+    };
+    window.showScheduleDay = function(index,button){
+      const days=window.XIG_SCHEDULE_DAYS;
+      const colors=["#e8e1f5","#dce9f4","#dcece3","#f4e4d4","#f7edc9","#eadfe0"];
+      const day=days[index];
+      if(!day) return;
+      document.querySelectorAll(".schedule-day").forEach((item,i)=>item.classList.toggle("selected",i===index));
+      document.getElementById("scheduleDayContent").innerHTML=window.scheduleDayContent(day,index,colors);
+    };
+  </script>
+</body>
+</html>
