@@ -6,7 +6,8 @@
   <meta name="theme-color" content="#202a44">
   <title>Our Class XI-G</title>
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="icon" type="image/png" href="aset/Icon.jpg">
+  <link rel="icon" type="image/jpeg" href="./aset/Icon.jpg">
+  <link rel="apple-touch-icon" href="./aset/Icon.jpg">
 </head>
 <body>
   <div id="loginScreen" class="login-wrap">
@@ -47,7 +48,7 @@
         <button data-page="denah" class="nav-item">▦ <span>Denah Kelas</span></button>
         <button data-page="pengumuman" class="nav-item">◉ <span>Pengumuman</span></button>
         <button data-page="absensi" class="nav-item">✓ <span>Absensi</span></button>
-        <button data-page="tugas" class="nav-item">▤ <span>Tugas</span></button>
+        <button data-page="tugas" class="nav-item">�� <span>Tugas</span></button>
         <button data-page="tagihan" class="nav-item">Rp <span>Tagihan</span></button>
         <button data-page="anggota" class="nav-item">♙ <span>Profil Anggota</span></button>
         <button data-page="gallery" class="nav-item">▧ <span>Gallery XI-G</span></button>
@@ -88,7 +89,6 @@
     window.scheduleDayContent = function(day,index,colors){
       return `<section class="schedule-day-panel"><div class="schedule-day-heading"><span>${day.emoji}</span><div><h3>${day.day}</h3><p>Jadwal pelajaran kelas XI-G</p></div></div><div class="schedule-lesson-list">${day.lessons.map((lesson,i)=>`<article class="schedule-lesson"><span class="schedule-period" style="background:${colors[i%colors.length]}">${lesson[0]}</span><div class="schedule-lesson-info"><b>${lesson[1]}</b><small>${lesson[2] || "Kegiatan kelas"}</small></div><span class="schedule-lesson-star">✦</span></article>`).join("")}</div></section>`;
     };
-    // app.js lama mendefinisikan ulang fungsi ini; pasang kembali sesudah defer script dijalankan.
     window.addEventListener("DOMContentLoaded",()=>{
       window.showScheduleDay = function(index){
         const day=window.XIG_SCHEDULE_DAYS[index];
