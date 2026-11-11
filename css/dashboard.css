@@ -21,3 +21,8 @@
 @media(max-width:850px){.xi-dashboard{padding:4px 0 70px}.xi-hero{min-height:390px;border-radius:21px}.xi-hero-content{padding:45px 23px}.xi-hero h1{font-size:38px}.xi-stats{grid-template-columns:repeat(2,1fr);gap:10px}.xi-stat-card{padding:15px}.xi-stat-card strong{font-size:23px}.xi-shortcuts{grid-template-columns:repeat(2,1fr)}.xi-carousel,.xi-slide img{min-height:270px}.xi-memory-grid{grid-template-columns:repeat(2,1fr)}.xi-memory,.xi-memory img{min-height:180px}.xi-activity-grid{grid-template-columns:1fr}}
 @media(max-width:480px){.xi-hero{min-height:360px}.xi-hero h1{font-size:33px}.xi-hero p{font-size:15px}.xi-primary-btn,.xi-secondary-btn{width:100%}.xi-section-title h2{font-size:21px}.xi-shortcuts button{min-height:112px;padding:14px}.xi-shortcuts span{font-size:24px}.xi-carousel,.xi-slide img{min-height:240px}.xi-slide-caption strong{font-size:18px}.xi-memory,.xi-memory img{min-height:150px}.xi-quote{padding:28px 18px}.xi-quote p{font-size:17px}.xi-back-top{right:14px;bottom:15px}}
 @media(prefers-reduced-motion:reduce){.xi-dashboard *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Hero dashboard: hanya tampilkan judul dan satu paragraf, tanpa tombol. */
+.xi-hero-buttons{display:none!important}
+.xi-hero-content>p{max-width:520px;margin:0;font-size:18px;line-height:1.7}
+@media(max-width:480px){.xi-hero-content>p{font-size:15px}}
