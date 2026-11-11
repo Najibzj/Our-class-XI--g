@@ -482,10 +482,10 @@ function dashboard(){
 }
 
 
-  const latestAnnouncements = [...data.announcements]
-    .sort((a,b)=>Number(!!b.important)-Number(!!a.important))
-    .slice(0,3)
-      
+const latestAnnouncements = [...data.announcements]
+  .sort((a,b)=>Number(!!b.important)-Number(!!a.important))
+  .slice(0,3)
+
 
 function openDashboardPage(target){
   page = target;
@@ -614,7 +614,7 @@ function bills(){
               <td><span class="tag">${x.paid?"Lunas":"Belum lunas"}</span></td>
               <td>${canEdit("tagihan")?
                 btn(x.paid?"Batalkan":"Lunasi",`data.bills[${i}].paid=!data.bills[${i}].paid;render()`,"action")+" "+
-                btn("Hapus",`data.bills.splice(${i},1);render()`,"action danger"):"—"}</td>
+                btn("Hapus",`data.bills.splice(${i},1);render()`,`"action danger"`):"—"}</td>
             </tr>`
           ).join("")}
         </tbody>
@@ -862,6 +862,38 @@ function schedule(){
   `;
 }
 
+function scheduleDayContent(day,index,colors){
+  if(!day || !day.lessons){
+    return "<div class='empty'>Jadwal hari ini belum tersedia.</div>";
+  }
+
+  return `
+    <section class="schedule-day-panel">
+      <div class="schedule-day-heading">
+        <span>${day.emoji}</span>
+        <div>
+          <h3>${day.day}</h3>
+          <p>Jadwal pelajaran XI-G</p>
+        </div>
+      </div>
+
+      <div class="schedule-lesson-list">
+        ${day.lessons.map((lesson,i)=>`
+          <article class="schedule-lesson">
+            <span class="schedule-period" style="background:${colors[i % colors.length]}">
+              ${lesson[0]}
+            </span>
+            <div class="schedule-lesson-info">
+              <b>${lesson[1]}</b>
+              ${lesson[2] ? `<small>👩‍🏫 ${lesson[2]}</small>` : ""}
+            </div>
+            <span class="schedule-lesson-star">✦</span>
+          </article>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
 
 function showScheduleDay(index,button){
   const days = [
@@ -918,7 +950,7 @@ function showScheduleDay(index,button){
   ];
 
   document.getElementById("scheduleDayContent").innerHTML =
-  "<div class='empty'>Jadwal hari ini belum tersedia.</div>";
+    scheduleDayContent(days[index], index, colors);
 }
 
 function openScheduleImage(){
