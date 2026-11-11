@@ -6,12 +6,12 @@ function dashboard(){
   const announcements=Array.isArray(data.announcements)?data.announcements:[];
   const attendance=Array.isArray(data.attendance)?data.attendance:[];
   const pendingBills=bills.filter(item=>!item.paid).length;
-  const pendingTasks=tasks.filter(item=>!(["selesai","completed"].includes(String(item.status||"").toLowerCase()))).length;
+  const pendingTasks=tasks.filter(item=>!( ["selesai","completed"].includes(String(item.status||"").toLowerCase()))).length;
   const today=new Date().toLocaleDateString("id-ID");
   const attendanceToday=attendance.filter(item=>item.date===today);
   const presentToday=attendanceToday.filter(item=>String(item.status||"").toLowerCase()==="hadir").length;
   const photos=[
-    ["aset/dashboard-hero.jpg","Our Class XI-G","Satu kelas, banyak cerita."],
+    ["aset/dashboard-hero.jpg","Class XI-G","Satu kelas, banyak cerita."],
     ["aset/kelas-1.jpg","Momen Kebersamaan","Cerita yang kita simpan bersama."],
     ["aset/kelas-2.jpg","Hari di Sekolah","Setiap hari punya kenangan."]
   ];
@@ -29,10 +29,10 @@ function dashboard(){
     <div class="xi-dashboard">
       <div class="xi-scroll-progress"><div id="dashboardScrollProgress"></div></div>
       <section class="xi-hero xi-reveal">
-        <div class="xi-hero-image"><img src="${photos[0][0]}" alt="Foto Our Class XI-G" onerror="this.style.display='none'"></div>
+        <div class="xi-hero-image"><img src="${photos[0][0]}" alt="Foto Class XI-G" onerror="this.style.display='none'"></div>
         <div class="xi-hero-content">
           <span class="xi-badge">XI-G · 2026/2027</span>
-          <h1>Our Class XI-G</h1><p>Satu kelas, banyak cerita.</p>
+          <h1>Class XI-G</h1><p>Satu kelas, banyak cerita.</p>
           <div class="xi-hero-buttons">
             <button class="xi-primary-btn" onclick="openDashboardPage('gallery')">📸 Lihat Gallery</button>
             <button class="xi-secondary-btn" onclick="openDashboardPage('anggota')">👥 Profil Anggota</button>
