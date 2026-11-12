@@ -1,6 +1,6 @@
 /* Add the Fashion Show Day photo to the dashboard carousel. */
 (function () {
-  const photoPath = "aset/Foto%20kelas%202.HEIC";
+  const photoPath = "aset/Fashion%20show.jpg";
   const photoIndex = dashboardPhotoFiles.length;
   dashboardPhotoFiles.push(photoPath);
 
