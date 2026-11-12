@@ -1,6 +1,6 @@
 /* Dashboard XI-G — overriding the original dashboard renderer. */
 function dashboard(){
-  const safe=value=>String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;", "'":"&#39;"}[ch]));
+  const safe=value=>String(value??"").replace(/[&<>\"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;", "'":"&#39;"}[ch]));
   const bills=Array.isArray(data.bills)?data.bills:[];
   const tasks=Array.isArray(data.tasks)?data.tasks:[];
   const announcements=Array.isArray(data.announcements)?data.announcements:[];
@@ -13,7 +13,8 @@ function dashboard(){
   const photos=[
     ["aset/dashboard-hero.jpg","Class XI-G","Satu kelas, banyak cerita."],
     ["aset/kelas-1.jpg","Momen Kebersamaan","Cerita yang kita simpan bersama."],
-    ["aset/kelas-2.jpg","Hari di Sekolah","Setiap hari punya kenangan."]
+    ["aset/kelas-2.jpg","Hari di Sekolah","Setiap hari punya kenangan."],
+    ["aset/Fashion%20show.jpg","Fashion Show Day","Fashion Show Day"]
   ];
   const memories=[
     ["aset/kelas-3.jpg","Kebersamaan XI-G"],
@@ -87,7 +88,7 @@ function dashboard(){
 }
 
 let dashboardSlideIndex=0;
-const dashboardPhotoFiles=["aset/dashboard-hero.jpg","aset/kelas-1.jpg","aset/kelas-2.jpg"];
+const dashboardPhotoFiles=["aset/dashboard-hero.jpg","aset/kelas-1.jpg","aset/kelas-2.jpg","aset/Fashion%20show.jpg"];
 const dashboardMemoryFiles=["aset/kelas-3.jpg","aset/kelas-4.jpg","aset/kelas-5.jpg","aset/kelas-6.jpg"];
 let dashboardScrollHandler=null;
 let dashboardEscapeHandler=null;
