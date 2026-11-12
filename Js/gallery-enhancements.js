@@ -44,17 +44,19 @@
           <div class="gallery-hero-stat"><strong>${data.gallery.length}</strong><span>kenangan</span></div>
         </header>
 
-        <section class="gallery-upload panel">
-          <div class="gallery-upload-heading"><div><span class="gallery-section-kicker">BAGIKAN MOMEN</span><h2>Tambah foto ke album</h2></div><span class="gallery-upload-icon">＋</span></div>
-          <div class="gallery-form-grid">
-            <label class="gallery-field gallery-field-wide">Pilih foto<input id="galleryFiles" type="file" accept="image/*" multiple></label>
-            <label class="gallery-field">Pilih album<select id="galleryAlbumMode" onchange="toggleNewGalleryAlbum()"><option value="new">＋ Buat album baru</option>${albums.map(album => `<option value="existing:${escapeHTML(album)}">Tambahkan ke: ${escapeHTML(album)}</option>`).join("")}</select></label>
-            <label class="gallery-field gallery-new-album-field" id="galleryNewAlbumField">Nama album baru<input id="galleryNewAlbum" type="text" maxlength="60" placeholder="Contoh: Class Meeting"></label>
-            <label class="gallery-field">Bingkai foto<select id="galleryFrame">${frames.map(([key, label]) => `<option value="${key}">${label}</option>`).join("")}</select></label>
-            <label class="gallery-field gallery-field-wide">Caption foto<textarea id="galleryCaptionInput" rows="2" maxlength="220" placeholder="Tulis cerita singkat tentang foto ini…"></textarea></label>
-          </div>
-          <div class="gallery-upload-footer"><span class="gallery-hint">Pilih album baru atau tambahkan foto ke album yang sudah ada.</span><button class="primary gallery-add-button" onclick="uploadGalleryPhotos()">📸 Tambahkan ke album</button></div>
-        </section>
+        <details class="gallery-upload-details">
+          <summary class="gallery-upload-summary"><span class="gallery-upload-summary-icon">＋</span><span><small>BAGIKAN MOMEN</small><strong>Tambah foto ke album</strong></span><span class="gallery-summary-chevron" aria-hidden="true">⌄</span></summary>
+          <section class="gallery-upload panel">
+            <div class="gallery-form-grid">
+              <label class="gallery-field gallery-field-wide">Pilih foto<input id="galleryFiles" type="file" accept="image/*" multiple></label>
+              <label class="gallery-field">Pilih album<select id="galleryAlbumMode" onchange="toggleNewGalleryAlbum()"><option value="new">＋ Buat album baru</option>${albums.map(album => `<option value="existing:${escapeHTML(album)}">Tambahkan ke: ${escapeHTML(album)}</option>`).join("")}</select></label>
+              <label class="gallery-field gallery-new-album-field" id="galleryNewAlbumField">Nama album baru<input id="galleryNewAlbum" type="text" maxlength="60" placeholder="Contoh: Class Meeting"></label>
+              <label class="gallery-field">Bingkai foto<select id="galleryFrame">${frames.map(([key, label]) => `<option value="${key}">${label}</option>`).join("")}</select></label>
+              <label class="gallery-field gallery-field-wide">Caption foto<textarea id="galleryCaptionInput" rows="2" maxlength="220" placeholder="Tulis cerita singkat tentang foto ini…"></textarea></label>
+            </div>
+            <div class="gallery-upload-footer"><span class="gallery-hint">Pilih album baru atau tambahkan foto ke album yang sudah ada.</span><button class="primary gallery-add-button" onclick="uploadGalleryPhotos()">📸 Tambahkan ke album</button></div>
+          </section>
+        </details>
 
         <div class="gallery-album-bar"><div><span class="gallery-section-kicker">KOLEKSI KELAS</span><h3>Album kenangan</h3></div>
           <label class="gallery-album-select">Pilih album<select onchange="setGalleryAlbum(this.value)">
@@ -62,7 +64,7 @@
             ${albums.map(album => `<option value="${escapeHTML(album)}" ${albumFilter === album ? "selected" : ""}>${escapeHTML(album)} (${data.gallery.filter(photo => (photo.album || "Kenangan XI-G") === album).length})</option>`).join("")}
           </select></label>
         </div>
-        <div class="gallery-display-tools"><span>${photos.length} foto${albumFilter === "all" ? "" : ` · ${escapeHTML(albumFilter)}`}</span><button class="gallery-toggle-actions" onclick="toggleGalleryActions()" aria-label="${showPhotoActions ? "Sembunyikan" : "Tampilkan"} tombol foto" aria-pressed="${showPhotoActions}" title="${showPhotoActions ? "Sembunyikan" : "Tampilkan"} tombol foto">=</button></div>
+        <div class="gallery-display-tools"><span>${photos.length} foto${albumFilter === "all" ? "" : ` · ${escapeHTML(albumFilter)}`}</span><button class="gallery-toggle-actions" onclick="toggleGalleryActions()" aria-label="Tampilkan atau sembunyikan aksi foto" aria-pressed="${showPhotoActions}" title="Tampilkan atau sembunyikan aksi foto">=</button></div>
 
         ${photos.length ? `<div class="gallery-grid gallery-instagram-grid">${photos.map(({ photo, index }) => {
           const reaction = reactions[photoKey(photo)] || { like: 0, dislike: 0, mine: "" };
@@ -73,7 +75,7 @@
             <div class="gallery-reactions"><button class="gallery-reaction ${reaction.mine === "like" ? "selected" : ""}" onclick="reactToGalleryPhoto(${index},'like')" aria-pressed="${reaction.mine === "like"}" aria-label="Suka">👍 <span>${reaction.like || 0}</span></button><button class="gallery-reaction ${reaction.mine === "dislike" ? "selected" : ""}" onclick="reactToGalleryPhoto(${index},'dislike')" aria-pressed="${reaction.mine === "dislike"}" aria-label="Tidak suka">👎 <span>${reaction.dislike || 0}</span></button></div>
             <div class="gallery-caption-actions"><button class="action" onclick="changeGalleryFrame(${index})">Bingkai</button>${isChair ? `<button class="action danger" onclick="deleteGalleryPhoto(${index})">Hapus</button>` : ""}</div>
           </article>`;
-        }).join("")}</div>` : `<div class="gallery-empty-state"><span>📷</span><h3>${data.gallery.length ? "Album ini belum punya foto" : "Album pertama menunggu cerita"}</h3><p>${data.gallery.length ? "Pilih album lain atau tambahkan foto baru." : "Pilih foto, beri nama album, lalu tambahkan caption untuk membagikan momen kelas."}</p></div>`}
+        }).join("")}</div>` : `<div class="gallery-empty-state"><span>📷</span><h3>${data.gallery.length ? "Album ini belum punya foto" : "Album pertama menunggu cerita"}</h3><p>${data.gallery.length ? "Pilih album lain atau tambahkan foto baru." : "Buka panel tambah foto untuk membuat album dan mengunggah kenangan kelas."}</p></div>`}
 
         <div id="galleryViewer" class="gallery-viewer hidden" onclick="if(event.target===this)closeGalleryViewer()"><button class="gallery-close" onclick="closeGalleryViewer()" aria-label="Tutup foto">✕</button><div class="gallery-viewer-content"><img id="galleryLargeImage" src="" alt="Foto kenangan XI-G"><p id="galleryViewerCaption"></p></div></div>
       </section>`;
