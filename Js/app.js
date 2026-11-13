@@ -575,7 +575,7 @@ function tasks(){
   return `${canEdit("tugas")?
     addForm("Tambah tugas",
       '<label>Nama tugas<input id="tTitle" required></label><label>Tenggat<input id="tDue" placeholder="Contoh: Jumat" required></label>',
-      "addTask()":""}
+      "addTask()"):""}
     <div class="cards">
       ${data.tasks.map((x,i)=>
         `<article class="item-card">
@@ -601,7 +601,7 @@ function bills(){
   return `${canEdit("tagihan")?
     addForm("Tambah tagihan",
       '<label>Nama tagihan<input id="bName" required placeholder="Kas / buku / acara"></label><label>Nominal (Rp)<input id="bAmount" type="number" min="0" required></label>',
-      "addBill()":""}
+      "addBill()"):""}
     <div class="panel">
       <h2>Daftar tagihan</h2>
       <div class="table-wrap"><table>
