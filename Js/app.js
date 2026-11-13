@@ -575,7 +575,7 @@ function tasks(){
   return `${canEdit("tugas")?
     addForm("Tambah tugas",
       '<label>Nama tugas<input id="tTitle" required></label><label>Tenggat<input id="tDue" placeholder="Contoh: Jumat" required></label>',
-      "addTask()"):""}
+      "addTask()":""}
     <div class="cards">
       ${data.tasks.map((x,i)=>
         `<article class="item-card">
@@ -601,7 +601,7 @@ function bills(){
   return `${canEdit("tagihan")?
     addForm("Tambah tagihan",
       '<label>Nama tagihan<input id="bName" required placeholder="Kas / buku / acara"></label><label>Nominal (Rp)<input id="bAmount" type="number" min="0" required></label>',
-      "addBill()"):""}
+      "addBill()":""}
     <div class="panel">
       <h2>Daftar tagihan</h2>
       <div class="table-wrap"><table>
@@ -657,7 +657,7 @@ function playlist(){
       <h3>Playlist XI-G</h3>
       <p>Kumpulan lagu pilihan untuk menemani hari-hari kelas XI-G.</p>
       <a class="primary playlist-link"
-        href="https://open.spotify.com/playlist/7Ls5JdpWqrFIE02Gn75lfy?si=A8Kub2a-R4qf9mCMBOaZ1A&utm_source=copy-link"
+        href="https://open.spotify.com/playlist/3eQaeIB9MqZVkGHTsvE4e1?si=NoSAStITT9ShbU4DBZVJ0Q&utm_source=whatsapp&pi=EFM6Oz_jQfqpH"
         target="_blank" rel="noopener noreferrer">
         🎧 Buka Playlist di Spotify
       </a>
@@ -667,7 +667,7 @@ function playlist(){
 
 function openSpotify(){
   window.open(
-    "https://open.spotify.com/playlist/7Ls5JdpWqrFIE02Gn75lfy?si=A8Kub2a-R4qf9mCMBOaZ1A&utm_source=copy-link",
+    "https://open.spotify.com/playlist/3eQaeIB9MqZVkGHTsvE4e1?si=NoSAStITT9ShbU4DBZVJ0Q&utm_source=whatsapp&pi=EFM6Oz_jQfqpH",
     "_blank"
   );
 }
