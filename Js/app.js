@@ -39,7 +39,6 @@ const data={
 
 const labels={
   dashboard:"Dashboard",
-  denah:"Denah Kelas",
   pengumuman:"Pengumuman",
   absensi:"Absensi",
   tugas:"Tugas",
@@ -186,7 +185,6 @@ function render(){
     </div>`+
     ({
       dashboard:dashboard,
-      denah:denah,
       pengumuman:announcements,
       absensi:attendance,
       tugas:tasks,
@@ -499,33 +497,20 @@ function openDashboardPage(target){
 }
 
 
-function denah(){
-  return `<p class="muted">Isi nama siswa pada setiap meja. Perubahan tersimpan sementara selama halaman terbuka.</p>
-    <div class="teacher-seat">Meja Guru</div>
-    <div class="desk-grid">
-      ${data.seats.map((n,i)=>
-        `<div class="desk">
-          <small>Meja ${i+1}</small>
-          <input aria-label="Nama meja ${i+1}" value="${n}" placeholder="Nama siswa"
-            onchange="data.seats[${i}]=this.value">
-        </div>`
-      ).join("")}
-    </div>
-    <p>${btn("Kosongkan denah","data.seats.fill('');render()")}</p>`;
-}
-
 function announcements(){
-  return `${canEdit("pengumuman")?
-    addForm("Tambah pengumuman",
+  return `${canEdit("pengumuman")
+    ? addForm("Tambah pengumuman",
       '<label>Judul<input id="aTitle" required></label><label>Isi<input id="aDesc" required></label>',
-      "addAnnouncement()"):""}
+      "addAnnouncement()")
+    : ""}
     <div class="cards">
       ${data.announcements.map((x,i)=>
         `<article class="item-card">
           <span class="tag">${x.date}</span>
           <h3>${x.title}</h3><p>${x.desc}</p>
-          ${canEdit("pengumuman")?
-            btn("Hapus",`data.announcements.splice(${i},1);render()`,"action danger"):""}
+          ${canEdit("pengumuman")
+            ? btn("Hapus",`data.announcements.splice(${i},1);render()`,"action danger")
+            : ""}
         </article>`
       ).join("")}
     </div>`;
@@ -572,17 +557,19 @@ function saveAttendance(){
 }
 
 function tasks(){
-  return `${canEdit("tugas")?
-    addForm("Tambah tugas",
+  return `${canEdit("tugas")
+    ? addForm("Tambah tugas",
       '<label>Nama tugas<input id="tTitle" required></label><label>Tenggat<input id="tDue" placeholder="Contoh: Jumat" required></label>',
-      "addTask()"):""}
+      "addTask()")
+    : ""}
     <div class="cards">
       ${data.tasks.map((x,i)=>
         `<article class="item-card">
           <span class="tag">${x.due}</span>
           <h3>${x.title}</h3><p>${x.desc}</p>
-          ${canEdit("tugas")?
-            btn("Selesai / hapus",`data.tasks.splice(${i},1);render()`,"action"):""}
+          ${canEdit("tugas")
+            ? btn("Selesai / hapus",`data.tasks.splice(${i},1);render()`,`"action"`)
+            : ""}
         </article>`
       ).join("")}
     </div>`;
@@ -598,10 +585,11 @@ function addTask(){
 }
 
 function bills(){
-  return `${canEdit("tagihan")?
-    addForm("Tambah tagihan",
+  return `${canEdit("tagihan")
+    ? addForm("Tambah tagihan",
       '<label>Nama tagihan<input id="bName" required placeholder="Kas / buku / acara"></label><label>Nominal (Rp)<input id="bAmount" type="number" min="0" required></label>',
-      "addBill()"):""}
+      "addBill()")
+    : ""}
     <div class="panel">
       <h2>Daftar tagihan</h2>
       <div class="table-wrap"><table>
@@ -612,9 +600,10 @@ function bills(){
               <td>${x.name}</td>
               <td>Rp ${Number(x.amount).toLocaleString("id-ID")}</td>
               <td><span class="tag">${x.paid?"Lunas":"Belum lunas"}</span></td>
-              <td>${canEdit("tagihan")?
-                btn(x.paid?"Batalkan":"Lunasi",`data.bills[${i}].paid=!data.bills[${i}].paid;render()`,"action")+" "+
-                btn("Hapus",`data.bills.splice(${i},1);render()`,`"action danger"`):"—"}</td>
+              <td>${canEdit("tagihan")
+                ? btn(x.paid?"Batalkan":"Lunasi",`data.bills[${i}].paid=!data.bills[${i}].paid;render()`,`"action"`)+" "+
+                  btn("Hapus",`data.bills.splice(${i},1);render()`,`"action danger"`)
+                : "—"}</td>
             </tr>`
           ).join("")}
         </tbody>
