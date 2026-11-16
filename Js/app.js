@@ -960,10 +960,10 @@ function clothes(){
     <h2>Jadwal pakaian</h2>
     ${[
       ["Senin","Putih abu-abu"],
-      ["Selasa","Pramuka"],
-      ["Rabu","Seragam madrasah"],
-      ["Kamis","Batik"],
-      ["Jumat","Muslim / Muslimah"]
+      ["Selasa","Putih abu-abu"],
+      ["Rabu","Sasirangan"],
+      ["Kamis","Pramuka"],
+      ["Jumat","Muslim / Olahraga"]
     ].map(x=>
       `<div class="list-row"><b>${x[0]}</b><small>${x[1]}</small></div>`
     ).join("")}
