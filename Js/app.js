@@ -21,12 +21,14 @@ const data={
   ],
   bills:[
     {name:"Kas kelas",amount:10000,person:"Semua anggota",paid:false}
-  ],
+  
   attendance:[],
   seats:Array(15).fill(""),
   songs:["Lagu Kenangan Kelas","Semangat Pagi","Lagu Favorit XI-G"],
   profiles:[
-    {name:"Najib",role:"Anggota",quote:"Satu kelas, banyak cerita."}
+    {name:"Najib",role:"Anggota"}
+  {name:"Raffi", role : "Ketua Kelas"}
+
   ],
   gallery:[],
   schedule:[
