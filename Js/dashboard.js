@@ -33,7 +33,8 @@ function dashboard(){
         <div class="xi-hero-image"><img src="${photos[0][0]}" alt="Foto Class XI-G" onerror="this.style.display='none'"></div>
         <div class="xi-hero-content">
           <span class="xi-badge">XI-G · 2026/2027</span>
-          <h1>Class XI-G</h1><p>Satu kelas, banyak cerita.</p>
+          <h1>Class XI-G</h1>
+          <p>Kelas XI-G MAN 4 Banjar merupakan tempat berkumpulnya berbagai karakter, cerita, dan impian dalam satu perjalanan. Di sini, kami belajar bukan hanya tentang pelajaran, tetapi juga tentang kebersamaan, kerja sama, dan arti sebuah persahabatan. Setiap hari menghadirkan pengalaman baru, setiap tantangan menjadi pelajaran, dan setiap momen menjadi kenangan yang akan selalu berarti. Satu kelas, banyak cerita, satu tujuan untuk meraih masa depan.</p>
           <div class="xi-hero-buttons">
             <button class="xi-primary-btn" onclick="openDashboardPage('gallery')">📸 Lihat Gallery</button>
             <button class="xi-secondary-btn" onclick="openDashboardPage('anggota')">👥 Profil Anggota</button>
