@@ -29,6 +29,8 @@ const data={
     {name:"Najib",role:"Anggota"},
     {name:"Rizky",role:"Anggota"},
     {name:"Atha",role:"Anggota"},
+    {name:"Rafa",role:"Anggota"},
+    {name:"Syita,role:"Anggota"},
     
   
   ],
