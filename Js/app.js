@@ -27,7 +27,7 @@ const data={
   songs:["Lagu Kenangan Kelas","Semangat Pagi","Lagu Favorit XI-G"],
   profiles:[
     {name:"Najib",role:"Anggota"}
-],
+  ],
   gallery:[],
   schedule:[
     ["07.30–08.00","Matematika"],
