@@ -21,7 +21,7 @@ const data={
   ],
   bills:[
     {name:"Kas kelas",amount:10000,person:"Semua anggota",paid:false}
-  
+  ],
   attendance:[],
   seats:Array(15).fill(""),
   songs:["Lagu Kenangan Kelas","Semangat Pagi","Lagu Favorit XI-G"],
