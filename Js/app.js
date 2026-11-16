@@ -30,9 +30,8 @@ const data={
     {name:"Rizky",role:"Anggota"},
     {name:"Atha",role:"Anggota"},
     {name:"Rafa",role:"Anggota"},
-    {name:"Syita,role:"Anggota"},
+    {name:"Syita",role:"Anggota"}
     
-  
   ],
   gallery:[],
   schedule:[
