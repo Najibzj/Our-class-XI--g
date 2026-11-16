@@ -56,6 +56,7 @@ const data={
     {name:"Salsabila Azkiya",role:"Anggota"},
     {name:"Satria Sulaiman",role:"Anggota"},
     {name:"Zahratul Aufia",role:"Anggota"} 
+    
   ],
   gallery:[],
   schedule:[
