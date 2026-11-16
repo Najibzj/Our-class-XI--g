@@ -26,7 +26,7 @@ const data={
   seats:Array(15).fill(""),
   songs:["Lagu Kenangan Kelas","Semangat Pagi","Lagu Favorit XI-G"],
   profiles:[
-    {name:"Najib",role:"Anggota"}
+    {name:"Najib",role:"Anggota"},
     {name:"Rizky",role:"Anggota"}
   ],
   gallery:[],
