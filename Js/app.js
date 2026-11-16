@@ -55,7 +55,7 @@ const data={
     {name:"Rahima Anindya",role:"Anggota"},
     {name:"Salsabila Azkiya",role:"Anggota"},
     {name:"Satria Sulaiman",role:"Anggota"},
-    {name:"Zahratul Aufia",role:"Anggota"},
+    {name:"Zahratul Aufia",role:"Anggota"}
    
     
     
