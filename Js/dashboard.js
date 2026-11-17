@@ -44,7 +44,6 @@ function dashboard(){
       <section class="xi-stats xi-reveal">
         <div class="xi-stat-card"><span>👥</span><strong>30</strong><small>Anggota Kelas</small></div>
         <div class="xi-stat-card"><span>📝</span><strong>${pendingTasks}</strong><small>Tugas Belum Selesai</small></div>
-        <div class="xi-stat-card"><span>💰</span><strong>${pendingBills}</strong><small>Tagihan Belum Lunas</small></div>
         <div class="xi-stat-card"><span>✅</span><strong>${presentToday}</strong><small>Hadir Hari Ini</small></div>
       </section>
       <section class="xi-section xi-reveal">
