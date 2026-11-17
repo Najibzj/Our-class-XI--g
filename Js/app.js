@@ -72,7 +72,6 @@ const labels={
   pengumuman:"Pengumuman",
   absensi:"Absensi",
   tugas:"Tugas",
-  tagihan:"Tagihan",
   anggota:"Profil Anggota",
   gallery:"Gallery XI-G",
   playlist:"Playlist Kelas",
