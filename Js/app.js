@@ -58,7 +58,6 @@ const data={
   schedule:[
     ["07.30–08.00","Matematika"],
     ["08.00–10.00","Bahasa Indonesia"],
-    ["10.45–12.15","Kimia"],
     ["13.00–14.30","Sejarah"]
   ]
 };
@@ -66,7 +65,6 @@ const data={
 const labels={
   dashboard:"Dashboard",
   pengumuman:"Pengumuman",
-  absensi:"Absensi",
   tugas:"Tugas",
   anggota:"Profil Anggota",
   gallery:"Gallery XI-G",
@@ -250,7 +248,6 @@ function dashboard(){
   const quickLinks = [
     {icon:"📢",title:"Pengumuman",desc:"Informasi kelas",page:"pengumuman"},
     {icon:"📚",title:"Daftar Tugas",desc:"Tugas dan tenggat",page:"tugas"},
-    {icon:"✓",title:"Absensi",desc:"Catatan kehadiran",page:"absensi"},
     {icon:"📅",title:"Jadwal",desc:"Pelajaran kelas",page:"jadwal"},
     {icon:"📸",title:"Gallery",desc:"Foto kenangan",page:"gallery"},
     {icon:"🎵",title:"Playlist",desc:"Musik kelas",page:"playlist"},
@@ -383,24 +380,6 @@ function dashboard(){
             <span class="dash-activity-icon">✓</span>
             <span class="tag">Hari ini</span>
           </div>
-
-          <h3>Absensi Hari Ini</h3>
-
-          <strong class="dash-money">
-            ${presentToday} hadir
-          </strong>
-
-          <p class="dash-muted">
-            ${attendanceToday.length} catatan kehadiran tersimpan hari ini.
-          </p>
-
-          <button class="dash-text-button"
-            onclick="openDashboardPage('absensi')">
-            Buka absensi ↗
-          </button>
-        </article>
-      </div>
-    </section>
 
     <section class="dash-section">
       <div class="dash-section-heading">
