@@ -13,7 +13,7 @@ function dashboard(){
   const photos=[
     ["aset/kelas-1.jpg","Class XI-G","Solidaritas Tanpa Batas."],
     ["aset/picture01.jpg","Fashion show","Membawakan pakaian dari KALBAR."],
-    ["aset/kelas-2.jpg","Hari di Sekolah","Setiap hari punya kenangan."],
+    ["aset/sasirangan02.jpg","Sasirangan","juara 3 sasirangan kokurikoler."],
     ["aset/Fashion%20show.jpg","Fashion Show Day","Fashion Show Day"]
   ];
   const memories=[
