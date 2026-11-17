@@ -11,8 +11,8 @@ function dashboard(){
   const attendanceToday=attendance.filter(item=>item.date===today);
   const presentToday=attendanceToday.filter(item=>String(item.status||"").toLowerCase()==="hadir").length;
   const photos=[
-    ["aset/dashboard-hero.jpg","Class XI-G","Satu kelas, banyak cerita."],
-    ["aset/kelas-1.jpg","Momen Kebersamaan","Cerita yang kita simpan bersama."],
+    ["aset/kelas-1.jpg","Class XI-G","Solidaritas Tanpa Batas."],
+    ["aset/picture01.jpg","Fashion show","Membawakan pakaian dari KALBAR."],
     ["aset/kelas-2.jpg","Hari di Sekolah","Setiap hari punya kenangan."],
     ["aset/Fashion%20show.jpg","Fashion Show Day","Fashion Show Day"]
   ];
