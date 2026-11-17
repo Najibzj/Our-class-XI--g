@@ -16,7 +16,6 @@ const data={
   ],
   tasks:[
     {title:"Matematika — Inversi Fungsi",desc:"Pelajari materi dan selesaikan latihan.",due:"Besok"},
-    {title:"Kimia — Laporan Praktikum",desc:"Kumpulkan laporan praktikum.",due:"2 hari"}
   ],
   attendance:[],
   seats:Array(15).fill(""),
