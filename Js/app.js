@@ -5,6 +5,7 @@ let kind="Murid", role="anggota", username="Anggota", page="dashboard";
 
 const perms={
   sekretaris:["pengumuman","tugas","denah","absensi","jadwal","pakaian"],
+  bendahara:["tagihan"],
   ketua:["*"],
   anggota:[],
   guru:["*"]
@@ -16,6 +17,10 @@ const data={
   ],
   tasks:[
     {title:"Matematika — Inversi Fungsi",desc:"Pelajari materi dan selesaikan latihan.",due:"Besok"},
+    {title:"Kimia — Laporan Praktikum",desc:"Kumpulkan laporan praktikum.",due:"2 hari"}
+  ],
+  bills:[
+    {name:"Kas kelas",amount:10000,person:"Semua anggota",paid:false}
   ],
   attendance:[],
   seats:Array(15).fill(""),
@@ -77,6 +82,7 @@ const labels={
 
 const passwords={
   sekretaris:"PWSS",
+  bendahara:"KASX",
   ketua:"KETUAX",
   guru:"SSSG"
 };
@@ -94,6 +100,7 @@ $$(".role-btn").forEach(b=>{
       ? '<option value="guru">Guru</option>'
       : '<option value="anggota">Anggota</option>'+
         '<option value="sekretaris">Sekretaris</option>'+
+        '<option value="bendahara">Bendahara</option>'+
         '<option value="ketua">Ketua</option>';
 
     const nameField=$("#username");
@@ -233,6 +240,14 @@ function dashboard(){
       '"':"&quot;",
       "'":"&#39;"
     }[ch])
+  );
+
+  const money = value =>
+    "Rp " + Number(value || 0).toLocaleString("id-ID");
+
+  const pendingBills = data.bills.filter(x => !x.paid);
+  const unpaidTotal = pendingBills.reduce(
+    (sum, bill) => sum + Number(bill.amount || 0), 0
   );
 
   const recentTasks = data.tasks.slice(0, 3);
@@ -379,6 +394,26 @@ function dashboard(){
 
         <article class="dash-activity-card">
           <div class="dash-activity-top">
+            <span class="dash-activity-icon">💰</span>
+            <span class="tag">${pendingBills.length} belum lunas</span>
+          </div>
+
+          <h3>Ringkasan Tagihan</h3>
+
+          <strong class="dash-money">${money(unpaidTotal)}</strong>
+
+          <p class="dash-muted">
+            Total nominal tagihan yang belum lunas.
+          </p>
+
+          <button class="dash-text-button"
+            onclick="openDashboardPage('tagihan')">
+            Periksa tagihan ↗
+          </button>
+        </article>
+
+        <article class="dash-activity-card">
+          <div class="dash-activity-top">
             <span class="dash-activity-icon">✓</span>
             <span class="tag">Hari ini</span>
           </div>
@@ -450,7 +485,7 @@ function dashboard(){
       <button class="dash-memory-card"
         onclick="openDashboardPage('gallery')">
         <img
-          src="aset/Screenshot_20261010-155852.jpg"
+          src="aset/picture01.jpg"
           alt="Kenangan kelas XI-G"
           onerror="this.style.display='none'">
 
@@ -496,7 +531,7 @@ function announcements(){
       "addAnnouncement()")
     : ""}
     <div class="cards">
-      ${data.announcements.map((x,i)=>
+      ${data.announcements.map((x,i)=
         `<article class="item-card">
           <span class="tag">${x.date}</span>
           <h3>${x.title}</h3><p>${x.desc}</p>
@@ -572,6 +607,43 @@ function addTask(){
     title:$("#tTitle").value,
     desc:"Tugas kelas",
     due:$("#tDue").value
+  });
+  render();
+}
+
+function bills(){
+  return `${canEdit("tagihan")
+    ? addForm("Tambah tagihan",
+      '<label>Nama tagihan<input id="bName" required placeholder="Kas / buku / acara"></label><label>Nominal (Rp)<input id="bAmount" type="number" min="0" required></label>',
+      "addBill()")
+    : ""}
+    <div class="panel">
+      <h2>Daftar tagihan</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Tagihan</th><th>Nominal</th><th>Status</th><th>Aksi</th></tr></thead>
+        <tbody>
+          ${data.bills.map((x,i)=>
+            `<tr>
+              <td>${x.name}</td>
+              <td>Rp ${Number(x.amount).toLocaleString("id-ID")}</td>
+              <td><span class="tag">${x.paid?"Lunas":"Belum lunas"}</span></td>
+              <td>${canEdit("tagihan")
+                ? btn(x.paid?"Batalkan":"Lunasi",`data.bills[${i}].paid=!data.bills[${i}].paid;render()`,`"action"`)+" "+
+                  btn("Hapus",`data.bills.splice(${i},1);render()`,`"action danger"`)
+                : "—"}</td>
+            </tr>`
+          ).join("")}
+        </tbody>
+      </table></div>
+    </div>`;
+}
+
+function addBill(){
+  data.bills.push({
+    name:$("#bName").value,
+    amount:Number($("#bAmount").value),
+    person:"Anggota",
+    paid:false
   });
   render();
 }
