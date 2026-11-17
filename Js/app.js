@@ -265,7 +265,6 @@ function dashboard(){
     {icon:"📢",title:"Pengumuman",desc:"Informasi kelas",page:"pengumuman"},
     {icon:"📚",title:"Daftar Tugas",desc:"Tugas dan tenggat",page:"tugas"},
     {icon:"✓",title:"Absensi",desc:"Catatan kehadiran",page:"absensi"},
-    {icon:"💰",title:"Tagihan",desc:"Status pembayaran",page:"tagihan"},
     {icon:"📅",title:"Jadwal",desc:"Pelajaran kelas",page:"jadwal"},
     {icon:"📸",title:"Gallery",desc:"Foto kenangan",page:"gallery"},
     {icon:"🎵",title:"Playlist",desc:"Musik kelas",page:"playlist"},
