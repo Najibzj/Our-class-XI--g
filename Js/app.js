@@ -217,7 +217,6 @@ function render(){
       pengumuman:announcements,
       absensi:attendance,
       tugas:tasks,
-      tagihan:bills,
       anggota:members,
       playlist:playlist,
       gallery:gallery,
