@@ -55,7 +55,7 @@ const data={
     {name:"Rahima Anindya",role:"Akademik"},
     {name:"Salsabila Azkiya",role:"Humas"},
     {name:"Satria Sulaiman",role:"Inventaris"},
-    {name:"Zahratul Aufia",role:"Kebersihan"} 
+    {name:"Zahratul Aufia",role:"Kebersihan"}
     
   ],
   gallery:[],
