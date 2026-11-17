@@ -53,7 +53,6 @@ function dashboard(){
           <button onclick="openDashboardPage('pengumuman')"><span>📢</span><b>Pengumuman</b><small>Info terbaru kelas</small></button>
           <button onclick="openDashboardPage('absensi')"><span>✅</span><b>Absensi</b><small>Kehadiran anggota</small></button>
           <button onclick="openDashboardPage('tugas')"><span>📚</span><b>Tugas</b><small>Daftar tugas kelas</small></button>
-          <button onclick="openDashboardPage('tagihan')"><span>💳</span><b>Tagihan</b><small>Catatan pembayaran</small></button>
           <button onclick="openDashboardPage('jadwal')"><span>🗓️</span><b>Jadwal</b><small>Pelajaran hari ini</small></button>
           <button onclick="openDashboardPage('playlist')"><span>🎵</span><b>Playlist</b><small>Musik kelas</small></button>
         </div>
