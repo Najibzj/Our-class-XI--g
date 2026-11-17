@@ -503,7 +503,7 @@ function dashboard(){
 
     <section class="dash-quote">
       <span>“</span>
-      <p>Satu kelas, banyak cerita.</p>
+      <p>Solidaritas Tanpa Batas.</p>
       <small>OUR CLASS XI-G · MAN 4 BANJAR</small>
     </section>
   `;
@@ -671,7 +671,7 @@ function playlist(){
   return `<div class="panel playlist-card">
     <h2>🎵 Playlist Kelas XI-G</h2>
     <div class="playlist-content">
-      <img src="aset/Screenshot_20261010-155852.jpg"
+      <img src="aset/Icon.jpg"
         alt="Logo Playlist XI-G" class="playlist-logo">
       <h3>Playlist XI-G</h3>
       <p>Kumpulan lagu pilihan untuk menemani hari-hari kelas XI-G.</p>
