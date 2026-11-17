@@ -14,7 +14,7 @@ function dashboard(){
     ["aset/kelas-1.jpg","Class XI-G","Solidaritas Tanpa Batas."],
     ["aset/picture01.jpg","Fashion show","Membawakan pakaian dari KALBAR."],
     ["aset/sasirangan02.jpg","Sasirangan","juara 3 sasirangan kokurikoler."],
-    ["aset/Fashion%20show.jpg","Fashion Show Day","Fashion Show Day"]
+    ["aset/maulid01.jpg","Maulid Nabi MUHAMMAD SAW","Maulid Nabi 2026"]
   ];
   const memories=[
     ["aset/kelas-3.jpg","Kebersamaan XI-G"],
