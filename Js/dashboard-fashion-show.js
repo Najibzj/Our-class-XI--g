@@ -1,4 +1,4 @@
-/* Add the Fashion Show Day photo to the dashboard carousel when it is not already included. */
+/*js */
 (function () {
   const photoPath = "aset/Fashion%20show.jpg";
   if (dashboardPhotoFiles.includes(photoPath)) return;
