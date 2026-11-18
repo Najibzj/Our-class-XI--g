@@ -19,7 +19,7 @@
 @media(max-width:480px){.xi-hero{min-height:360px}.xi-hero h1{font-size:33px}.xi-hero p{font-size:15px}.xi-primary-btn,.xi-secondary-btn{width:100%}.xi-section-title h2{font-size:21px}.xi-shortcuts{grid-template-columns:repeat(2,1fr)}.xi-activity-grid{grid-template-columns:1fr}.xi-carousel{min-height:250px}}
 @media(prefers-reduced-motion:reduce){.xi-dashboard *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
-/* Hero dashboard: paragraf pengantar harus muat penuh di atas gambar. */
+/* Hero dashboard: paragraf. */
 .xi-hero{min-height:0}
 .xi-hero-content{max-width:820px}
 .xi-hero-content>p{max-width:740px;margin:0;font-size:18px;line-height:1.7}
