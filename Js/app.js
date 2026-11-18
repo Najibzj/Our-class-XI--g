@@ -719,7 +719,7 @@ function schedule(){
       <div class="schedule-hero-icon">✦</div>
       <p class="schedule-kicker">MAN 4 BANJAR · TAHUN AJARAN 2026/2027</p>
       <h2>Jadwal Pelajaran</h2>
-      <p>XI-G · September – Oktober 2026</p>
+      <p>XI-G · Tahun Pelajaran 2026</p>
       <div class="schedule-hero-line"></div>
       <span>LEARN TOGETHER, GROW TOGETHER</span>
     </section>
@@ -761,7 +761,7 @@ function schedule(){
       <h3>🖼️ Jadwal Asli Kelas XI-G</h3>
       <p class="muted">Lihat gambar jadwal resmi. Cubit layar untuk memperbesar.</p>
       <img
-        src="aset/jadwal-xig.jpg"
+        src="aset/cihuy01.jpg"
         alt="Jadwal pelajaran resmi XI-G September–Oktober 2026"
         class="schedule-original-image"
         onclick="openScheduleImage()"
@@ -775,7 +775,7 @@ function schedule(){
       onclick="if(event.target===this)closeScheduleImage()">
       <button class="schedule-viewer-close"
         onclick="closeScheduleImage()">✕</button>
-      <img src="aset/jadwal-xig.jpg"
+      <img src="aset/cihuy01.jpg"
         alt="Jadwal asli XI-G yang diperbesar">
     </div>
   `;
