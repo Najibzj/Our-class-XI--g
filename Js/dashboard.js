@@ -44,15 +44,14 @@ function dashboard(){
       <section class="xi-stats xi-reveal">
         <div class="xi-stat-card"><span>👥</span><strong>30</strong><small>Anggota Kelas</small></div>
         <div class="xi-stat-card"><span>📝</span><strong>${pendingTasks}</strong><small>Tugas Belum Selesai</small></div>
-        <div class="xi-stat-card"><span>✅</span><strong>${presentToday}</strong><small>Hadir Hari Ini</small></div>
       </section>
       <section class="xi-section xi-reveal">
         <div class="xi-section-title"><div><span>⚡ AKSES CEPAT</span><h2>Menu Kelas</h2></div></div>
         <div class="xi-shortcuts">
           <button onclick="openDashboardPage('pengumuman')"><span>📢</span><b>Pengumuman</b><small>Info terbaru kelas</small></button>
-          <button onclick="openDashboardPage('absensi')"><span>✅</span><b>Absensi</b><small>Kehadiran anggota</small></button>
           <button onclick="openDashboardPage('jadwal')"><span>🗓️</span><b>Jadwal</b><small>Pelajaran hari ini</small></button>
           <button onclick="openDashboardPage('playlist')"><span>🎵</span><b>Playlist</b><small>Musik kelas</small></button>
+          <button oneckick="openDashboardPage('tugas')"><span>📚</span><b>Tugas</b><small>Tugas kelas</small></button>
         </div>
       </section>
       <section class="xi-section xi-reveal">
